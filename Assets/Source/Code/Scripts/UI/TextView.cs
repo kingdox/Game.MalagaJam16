@@ -9,15 +9,15 @@ public class TextView : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
     public Canvas canvas;
-    public LayerMask layerMask;
-    private RaycastHit2D[] raycastResults;
-    private TextSlot _slot;
+    // public LayerMask layerMask;
+    // private RaycastHit2D[] raycastResults;
+    // private TextSlot _slot;
 
-    public TextSlot Slot => _slot;
-
+    // public TextSlot Slot => _slot;
+    public event Action<TextView> OnTextBeginDrag;
     private void Awake()
     {
-        raycastResults = new RaycastHit2D[1];
+        // raycastResults = new RaycastHit2D[1];
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
     }
@@ -26,12 +26,9 @@ public class TextView : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     {
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.4f;
+        OnTextBeginDrag?.Invoke(this);
         Debug.Log("hhhhhhhh");
-        if (_slot)
-        {
-            _slot.Reset();
-            _slot = null;
-        }
+ 
         // Physics2D.RaycastNonAlloc(_rectTransform.anchoredPosition, Vector2.up, raycastResults, int.MaxValue, layerMask);
         // if (raycastResults.Length <= 0) return;
         // if (raycastResults[0].collider == null) return;
@@ -75,8 +72,8 @@ public class TextView : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         eventData.useDragThreshold = false;
     }
 
-    public void SetSlot(TextSlot textSlot)
-    {
-        _slot = textSlot;
-    }
+    // public void SetSlot(TextSlot textSlot)
+    // {
+    //     _slot = textSlot;
+    // }
 }

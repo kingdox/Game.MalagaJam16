@@ -2,11 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TextSlot : MonoBehaviour, IDropHandler, IDragHandler
+public class TextSlot : MonoBehaviour, IDropHandler
 {
     private RectTransform _rectTransform;
-    public event Action OnTextEnter;
-    public event Action OnTextExit;
+    public event Action<TextSlot, TextView> OnSlotIsFilled;
+    public event Action<TextSlot> OnSlotIsReseted;
 
     private void Start()
     {
@@ -20,27 +20,7 @@ public class TextSlot : MonoBehaviour, IDropHandler, IDragHandler
         eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
             _rectTransform.anchoredPosition;
         if (!textView) return;
-        if (textView.Slot != null && textView.Slot != this)
-        {
-            textView.Slot.Reset();
-        }
-        textView.SetSlot(this);
-        OnTextEnter?.Invoke();
+        OnSlotIsFilled?.Invoke(this, textView);
     }
 
-    public void Reset()
-    {
-        Debug.Log($"RESET {this}");
-        OnTextExit?.Invoke();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        Debug.Log("Slot OUT");
-        var textView = eventData.pointerDrag.GetComponent<TextView>();
-        if (textView)
-        {
-            Reset();
-        }
-    }
 }

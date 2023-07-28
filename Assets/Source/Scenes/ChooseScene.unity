@@ -644,9 +644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 665904423}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!225 &877005280
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -690,6 +687,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textSlots:
   - {fileID: 3929916}
+  textViews:
+  - {fileID: 877005279}
 --- !u!4 &975163744
 Transform:
   m_ObjectHideFlags: 0

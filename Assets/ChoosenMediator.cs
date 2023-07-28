@@ -1,52 +1,74 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChoosenMediator : MonoBehaviour
 {
     [SerializeField] private List<TextSlot> textSlots;
+    [SerializeField] private List<TextView> textViews;
 
+    private Dictionary<TextSlot, TextView> _dictionaryTexPosition;
     private int _textsInPlace;
 
-    // Start is called before the first frame update
     void Start()
     {
+        _dictionaryTexPosition = new Dictionary<TextSlot, TextView>();
         foreach (var textSlot in textSlots)
         {
-            textSlot.OnTextEnter += TextEnter;
-            textSlot.OnTextExit += TextExit;
+            textSlot.OnSlotIsFilled += SlotIsFilled;
+            textSlot.OnSlotIsReseted += ResetSlot;
         }
+
+        foreach (var textSlot in textViews)
+        {
+            textSlot.OnTextBeginDrag += TextStartsDrag;
+        }
+    }
+
+    private void TextStartsDrag(TextView textView)
+    {
+        TextSlot elementToDelete = null;
+        foreach (var (key, value) in _dictionaryTexPosition)
+        {
+            if (value == textView)
+            {
+                elementToDelete = key;
+            }
+        }
+
+        if (elementToDelete == null) return;
+        ResetSlot(elementToDelete);
     }
 
     private void OnDestroy()
     {
         foreach (var textSlot in textSlots)
         {
-            textSlot.OnTextEnter -= TextEnter;
-            textSlot.OnTextExit -= TextExit;
+            textSlot.OnSlotIsFilled -= SlotIsFilled;
+            textSlot.OnSlotIsReseted -= ResetSlot;
+        }
+
+        foreach (var textSlot in textViews)
+        {
+            textSlot.OnTextBeginDrag -= TextStartsDrag;
         }
     }
 
-    private void TextExit()
+    private void ResetSlot(TextSlot obj)
     {
+        _dictionaryTexPosition.Remove(obj);
+
         _textsInPlace--;
     }
 
-    private void TextEnter()
+    private void SlotIsFilled(TextSlot arg1, TextView arg2)
     {
+        _dictionaryTexPosition.Add(arg1, arg2);
         _textsInPlace++;
     }
 
+
     public void Continue()
     {
-        if (_textsInPlace == textSlots.Count)
-        {
-            Debug.Log("OK");
-        }
-        else
-        {
-            Debug.Log("ERROR");
-        }
+        Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
     }
 }
