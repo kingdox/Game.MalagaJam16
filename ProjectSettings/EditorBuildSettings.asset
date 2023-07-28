@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Source/Code/Scripts/Modules/Bootstrap/Bootstrap.unity
+    guid: f8ac26074d516469b94f0a885ab87e3c
+  - enabled: 1
+    path: Packages/com.kingdox.uniflux.binary/Runtime/UniFlux.Binary.unity
+    guid: 64bcf2447e3874e7a9b5377f2978cf30
+  - enabled: 1
+    path: Packages/com.kingdox.uniflux.click/Runtime/UniFlux.Click.unity
+    guid: 803c5aad25beb4b11b7b6169bbf6b12c
+  - enabled: 1
+    path: Packages/com.kingdox.uniflux.updates/Runtime/UniFlux.Updates.unity
+    guid: e5b414520d42742d59fd3e977837d851
+  - enabled: 1
+    path: Assets/Source/Code/Scripts/Modules/EventSystem/EventSystem.unity
+    guid: fae60dfa1099e498dba9cfaf1ee3fb11
+  - enabled: 1
+    path: Packages/com.kingdox.uniflux.scene/Runtime/UniFlux.Scene.unity
+    guid: 3c2d68bfc8bac42bb8c8035514b7cf7c
   m_configObjects: {}

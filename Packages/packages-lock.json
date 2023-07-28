@@ -1,5 +1,42 @@
 {
   "dependencies": {
+    "com.kingdox.uniflux": {
+      "version": "https://github.com/kingdox/UniFlux.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a2d46deeee32ba723b732fe7de2de2e82c7ad9f6"
+    },
+    "com.kingdox.uniflux.binary": {
+      "version": "https://github.com/kingdox/UniFlux.Binary.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1222b6ed364bfab0223d05a6330ec61aaddf1227"
+    },
+    "com.kingdox.uniflux.click": {
+      "version": "https://github.com/kingdox/UniFlux.Click.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.kingdox.uniflux": "^1.0.0"
+      },
+      "hash": "bf239dc6adbc3ca6976a36d5c7960287e3b49432"
+    },
+    "com.kingdox.uniflux.scene": {
+      "version": "https://github.com/kingdox/UniFlux.Scene.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3b3e912f6fc05c3e65e99c2d6a24188088a89799"
+    },
+    "com.kingdox.uniflux.updates": {
+      "version": "https://github.com/kingdox/UniFlux.Updates.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8b8d13dc972519d23d438192b92b4e6715200496"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,
@@ -217,6 +254,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.xavier.xavhelpto": {
+      "version": "https://github.com/kingdox/XavHelpTo.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "068ff038185b71000330bf368a3a11f2bf762bf2"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
