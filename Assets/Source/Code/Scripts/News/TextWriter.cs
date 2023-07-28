@@ -7,6 +7,7 @@ public class TextWriter : MonoBehaviour
     public TextMeshProUGUI textTextMeshProUGUI;
     public float letterPause  = 0.1f;
     public string _text;
+
     private void Start()
     {
         StartCoroutine(TypeText());
