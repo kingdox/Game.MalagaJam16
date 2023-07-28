@@ -10,7 +10,6 @@ public class TextWriter : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TypeText());
-        string text = "OEOE";
     }
 
     private IEnumerator TypeText()
