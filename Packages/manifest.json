@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "com.kingdox.uniflux": "https://github.com/kingdox/UniFlux.git",
+    "com.kingdox.uniflux.binary": "https://github.com/kingdox/UniFlux.Binary.git",
+    "com.kingdox.uniflux.click": "https://github.com/kingdox/UniFlux.Click.git",
+    "com.kingdox.uniflux.scene": "https://github.com/kingdox/UniFlux.Scene.git",
+    "com.kingdox.uniflux.updates": "https://github.com/kingdox/UniFlux.Updates.git",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.feature.2d": "2.0.0",
     "com.unity.ide.rider": "3.0.24",
@@ -9,6 +14,7 @@
     "com.unity.timeline": "1.7.5",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.8.0",
+    "com.xavier.xavhelpto": "https://github.com/kingdox/XavHelpTo.git",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
