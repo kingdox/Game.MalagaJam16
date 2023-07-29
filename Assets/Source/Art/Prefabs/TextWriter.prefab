@@ -149,5 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textTextMeshProUGUI: {fileID: 3555538905249539585}
   letterPause: 0.07
-  _text: El fin del mundo se acerca. Tienes que alertar a la poblacion aunque tengas
-    que jugar sucio.
+  _text: 
