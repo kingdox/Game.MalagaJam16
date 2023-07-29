@@ -15,6 +15,8 @@ public sealed class Bootstrap : MonoFlux
     private IEnumerator Start()
     {
 
+
         yield return 0;
+
     }
 }
