@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Kingdox.UniFlux;
 using TMPro;
 using UnityEngine;
 
@@ -17,17 +18,17 @@ public class ChoosenMediator : MonoBehaviour
     private Dictionary<TextView, NewsScriptableObject> _dictionaryNewsText;
     private int _textsInPlace;
 
+    [Flux("Intro.Display")] private void Display(bool condition)  => canvas.enabled = condition;
+    [Flux("DayN.Start")] private void StartWrite()
+    {
+        Init();
+    }
     private void Awake()
     {
-        SetStatus(false);
+        Display(false);
     }
-
-    public void SetStatus(bool status)
-    {
-        canvas.enabled = status;
-    }
-
-    void Start()
+    
+    private void Init()
     {
         _dictionaryTexPosition = new Dictionary<TextSlot, TextView>();
         _dictionaryNewsText = new Dictionary<TextView, NewsScriptableObject>();
