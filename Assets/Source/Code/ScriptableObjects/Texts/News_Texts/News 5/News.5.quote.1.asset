@@ -17,8 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Destacan estudios espa\xF1oles como \u201CSide Quest\u201D con una
-        novedosa narrativa. "
+      value: "Esta campa\xF1a ha sido impulsada por una ONG espa\xF1ola."
     - name: '1 : English'
       enumme: 1
       value: 
