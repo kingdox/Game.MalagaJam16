@@ -19,17 +19,44 @@ MonoBehaviour:
     - name: '0 : Intro'
       enumme: 0
       value: {fileID: 8300000, guid: 9cc54d9dc916b43fd8836d11c86e3eac, type: 3}
-    - name: '1 : Report'
+    - name: '1 : Elecciones'
       enumme: 1
-      value: {fileID: 8300000, guid: 9bae448c7e26e444aaafb2f512190b46, type: 3}
-    - name: '2 : Chill'
+      value: {fileID: 8300000, guid: e9daacab9ced149268b8d5f49c92aad6, type: 3}
+    - name: '2 : Report'
       enumme: 2
+      value: {fileID: 8300000, guid: 0e4d17a7d46984db2aa3284f1950db52, type: 3}
+    - name: '3 : Casa'
+      enumme: 3
       value: {fileID: 0}
   Sounds:
     list:
-    - name: '0 : Report_News'
+    - name: '0 : ReportIntro'
       enumme: 0
-      value: {fileID: 0}
+      value: {fileID: 8300000, guid: ecee930ad56404644b27a09632a7adc5, type: 3}
+    - name: '1 : Key_1'
+      enumme: 1
+      value: {fileID: 8300000, guid: 97dda580eb8d343a38849cf33f2d7b9e, type: 3}
+    - name: '2 : Key_2'
+      enumme: 2
+      value: {fileID: 8300000, guid: 7ee544dbd6ded4e78b87eb95e73dd202, type: 3}
+    - name: '3 : Key_3'
+      enumme: 3
+      value: {fileID: 8300000, guid: 326b383e691cf46eb835e94021180194, type: 3}
+    - name: '4 : Key_4'
+      enumme: 4
+      value: {fileID: 8300000, guid: e61bafbbdb04446e0bbc338cf7a40b9f, type: 3}
+    - name: '5 : Key_5'
+      enumme: 5
+      value: {fileID: 8300000, guid: dc65556d0ec37493ab2d9b04cab77e34, type: 3}
+    - name: '6 : GrabPaper_1'
+      enumme: 6
+      value: {fileID: 8300000, guid: f8dca4f7285874032bd47dc9b55f8769, type: 3}
+    - name: '7 : GrabPaper_2'
+      enumme: 7
+      value: {fileID: 8300000, guid: f73a334e912d24f0f82062eb5b81ef87, type: 3}
+    - name: '8 : GrabPaper_3'
+      enumme: 8
+      value: {fileID: 8300000, guid: 2ce050ee807044fc9ab7aa1d5d97a959, type: 3}
   Peoples:
     list:
     - name: '0 : Emily'

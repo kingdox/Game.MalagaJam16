@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Kingdox.UniFlux;
 using Scenes = Kingdox.UniFlux.Scenes;
+using Binary = Kingdox.UniFlux.Binary;
 
 public static class Service 
 {
@@ -15,4 +16,17 @@ public static class Service
     {
         set => "SpeedFade".Dispatch(value);
     }
+    public static T GetBinary<T>(string variable, T defaultValue=default) 
+    {
+        try
+        {
+            return (T)Binary.BinaryService.Load(variable);
+        }
+        catch (System.Exception)
+        {
+            return defaultValue;
+        }
+    }
+    public static void SetBinary<T>(string variable, T value) => Binary.BinaryService.Save((variable, value));
+
 }

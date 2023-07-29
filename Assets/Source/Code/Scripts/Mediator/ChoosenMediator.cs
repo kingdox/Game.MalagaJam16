@@ -84,9 +84,9 @@ public class ChoosenMediator : MonoBehaviour
         Debug.Log($"SlotIsFilled 2 {textView.name}");
         textView.IsInGoodPosition(true);
         titleWriter.SetText("Title 1 ");
-        titleWriter.StartCoroutine();
+        titleWriter.StartWrite();
         titleBody.SetText("Body 1 ");
-        titleBody.StartCoroutine();
+        titleBody.StartWrite();
         _dictionaryTexPosition.Add(arg1, textView);
         _textsInPlace++;
     }

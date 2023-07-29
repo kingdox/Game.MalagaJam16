@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
+  m_Name: Intro.Title
+  m_EditorClassIdentifier: 
+  _debug_info: Descripcion del juego para poner en contexto al jugador.
+  Texts:
+    list:
+    - name: '0 : Spanish'
+      enumme: 0
+      value: El fin del mundo se acerca. Tienes que alertar a la poblacion aunque
+        tengas que jugar sucio.
+    - name: '1 : English'
+      enumme: 1
+      value: 'The end of the world is comming. You must warn your people even if
+        that means using cuestionable means. '
