@@ -41,17 +41,17 @@ public sealed class IntroFlux : MonoFlux
     private async void OnTextEnd_Intro()
     {
         await Task.Delay(2000);
-        StartCoroutine(GoToNextActivity());
+        GoToNextActivity();
     }
-    private IEnumerator GoToNextActivity()
+    private async void GoToNextActivity()
     {
         Service.Fade(true);
-        yield return new WaitForSeconds(2);
+        Service.StopMusic();
+        await Task.Delay(2000);
         textWritter_intro.ResetText();
         Display(false);
-        "Elecciones.Display".Print().Dispatch(true);
-        yield return new WaitForSeconds(2);
+        "DayN.Display".Dispatch(true);
+        await Task.Delay(2000);
         Service.Fade(false);
-
     }
 }

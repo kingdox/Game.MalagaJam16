@@ -7,6 +7,7 @@ public class TextWriter : MonoBehaviour
 {
     public TextMeshProUGUI textTextMeshProUGUI;
     public float letterPause  = 0.1f;
+    public bool canPlaySound  = default;
     [HideInInspector] public string _text;
     public Action OnTextStart;
     public Action OnTextEnd;
@@ -37,6 +38,19 @@ public class TextWriter : MonoBehaviour
             if(currentText == _text)
             {
                 textTextMeshProUGUI.SetText(textTextMeshProUGUI.text+letter);
+                
+                if(canPlaySound)
+                {
+                    //TODO
+                    //Nota hay 5 tipos de sonidos
+                    // SoundEnum.Key_1
+                    // SoundEnum.Key_2
+                    // SoundEnum.Key_3
+                    // SoundEnum.Key_4
+                    // SoundEnum.Key_5
+                    // Service.PlaySound();
+                }
+
                 yield return new WaitForSeconds(letterPause);
                 OnTextWrite?.Invoke();
             }

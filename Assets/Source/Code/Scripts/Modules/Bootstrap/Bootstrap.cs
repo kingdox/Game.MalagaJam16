@@ -43,6 +43,7 @@ public sealed class Bootstrap : MonoFlux
         // INIT GAME
         Service.SetBinary("_debug_", Service.GetBinary("_debug_", 0) + 1);
 
+        Service.PlayMusic(MusicEnum.Intro);
         "Intro.Display".Dispatch(true);
         "Intro.Start".Dispatch();
 
