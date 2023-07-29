@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
-  m_Name: News.0.quote.0
+  m_Name: News.4.Description
   m_EditorClassIdentifier: 
-  _debug_info: "\xA1Gran Catastrofe!"
+  _debug_info: 
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "El secretario general de la ONU ha comunicado esta misma ma\xF1ana
-        la desintegracion temporal de la organizacion debido a las discrepancias
-        de los paises fundadores."
+      value: "Un grupo de investigadores malague\xF1os descubre una cura efectiva
+        y rapida para el ebola"
     - name: '1 : English'
       enumme: 1
       value: 

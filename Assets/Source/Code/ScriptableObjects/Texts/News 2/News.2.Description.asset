@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
-  m_Name: News.0.quote.1
+  m_Name: News.2.Description
   m_EditorClassIdentifier: 
   _debug_info: 
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: 'Miles de refugiados se agolpan en las zonas mas elevadas de las islas
-        y aquellos con dinero huyen a la peninsula. '
+      value: Se produce una subida del nivel del mar muy pronunciado en las islas
+        Canarias y las Baleares, dejando a decenas de miles sin hogar.
     - name: '1 : English'
       enumme: 1
-      value: Miles de refugiados se agolpan en las zonas mas elevadas de las islas
-        y aquellos con dinero huyen a la peninsula.
+      value: 

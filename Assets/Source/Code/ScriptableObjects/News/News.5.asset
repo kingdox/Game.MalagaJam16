@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e437030f59134082b8a3f6f0e7b9323, type: 3}
+  m_Name: News.5
+  m_EditorClassIdentifier: 
+  _debug_info: Side quest forrados
+  Text_Title: {fileID: 11400000, guid: 609cd6e045504478e8dd90e0eb8ecc7d, type: 2}
+  Text_Description: {fileID: 11400000, guid: ea40715e0f20642c983297f0ffb9d99e, type: 2}
+  Text_Quotes:
+  - {fileID: 11400000, guid: 39cf278791e4d4773bf45320b6c4f2c1, type: 2}
+  - {fileID: 11400000, guid: 720bc06a3b1e94075ada9f290c1dd465, type: 2}
+  Text_PeopleChat: []
+  Attributes:
+  - {fileID: 11400000, guid: 01f939023e63e473f8673211d9bcf477, type: 2}

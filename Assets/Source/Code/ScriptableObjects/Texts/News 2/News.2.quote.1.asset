@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
-  m_Name: News.0.quote.0
+  m_Name: News.2.quote.1
   m_EditorClassIdentifier: 
   _debug_info: 
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Tras el ultimo analisis de mercado la industria andaluza ha conseguido
-        unos ingresos record de 1000 millones de euros.
+      value: 'Miles de refugiados se agolpan en las zonas mas elevadas de las islas
+        y aquellos con dinero huyen a la peninsula. '
     - name: '1 : English'
       enumme: 1
-      value: 
+      value: Miles de refugiados se agolpan en las zonas mas elevadas de las islas
+        y aquellos con dinero huyen a la peninsula.
