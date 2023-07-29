@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "La industria del videojuego andaluza consigue unos ingresos record
-        colocandose a la cabeza de Espa\xF1a. "
+      value: "Se abre una campa\xF1a mundial de donaciones para ayudar con los desastres
+        naturales. "
     - name: '1 : English'
       enumme: 1
       value: 
