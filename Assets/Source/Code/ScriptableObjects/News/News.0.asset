@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e437030f59134082b8a3f6f0e7b9323, type: 3}
   m_Name: News.0
   m_EditorClassIdentifier: 
-  _debug_info: Nucleo del planeta
+  _debug_info: Nucleo del planeta :(
   Text_Title: {fileID: 11400000, guid: c1f535d36e28c884daa09285f3dfc7ce, type: 2}
   Text_Description: {fileID: 11400000, guid: 098ca97b9a955214a90d7349e8e6f7c6, type: 2}
-  Text_Quotes: []
+  Text_Quotes:
+  - {fileID: 11400000, guid: 0a1231141b5330947ba16c4eda6ac2c9, type: 2}
+  - {fileID: 11400000, guid: a79cf71ea3a04ea4ba1c03565e3d8d4e, type: 2}
   Text_PeopleChat: []
   Attributes:
   - {fileID: 11400000, guid: da26d1811245c47a29b05866e5f60156, type: 2}

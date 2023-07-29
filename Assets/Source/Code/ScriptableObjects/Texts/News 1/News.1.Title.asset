@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
-  m_Name: News.0.quote.1
+  m_Name: News.1.Title
   m_EditorClassIdentifier: 
-  _debug_info: 
+  _debug_info: 'Noticia 2
+
+'
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: 'Aunque sea temporal, muchos de los diplomaticos que han abandonado
-        el edificio de Nueva York ponen en duda un pronto regreso de la organizacion. '
+      value: Ruptura desastrosa
     - name: '1 : English'
       enumme: 1
       value: 
