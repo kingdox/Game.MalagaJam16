@@ -7,6 +7,8 @@ using Kingdox.UniFlux;
 using Kingdox.UniFlux.Scenes;
 using UnityEngine.SceneManagement;
 using XavHelpTo;
+using XavHelpTo.Get;
+using XavHelpTo.Know;
 
 public sealed class Bootstrap : MonoFlux
 {
@@ -42,6 +44,7 @@ public sealed class Bootstrap : MonoFlux
 
         // INIT GAME
         Service.SetBinary("_debug_", Service.GetBinary("_debug_", 0) + 1);
+        "DayN".DispatchState(3);
 
         Service.PlayMusic(MusicEnum.Intro);
         "Intro.Display".Dispatch(true);
