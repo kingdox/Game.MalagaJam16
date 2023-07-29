@@ -50,6 +50,10 @@ public sealed class Bootstrap : MonoFlux
         "Intro.Display".Dispatch(true);
         "Intro.Start".Dispatch();
 
+
+        //.Text
+        String.Format("Hola Mundo {0}", 16);
+
         // END
         yield return Service.RemoveScene(SceneData.Bootstrap); 
     }

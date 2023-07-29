@@ -47,11 +47,11 @@ public sealed class IntroFlux : MonoFlux
     {
         Service.Fade(true);
         Service.StopMusic();
-        await Task.Delay(2000);
+        await Task.Delay(1000);
         textWritter_intro.ResetText();
         Display(false);
         "DayN.Display".Dispatch(true);
-        await Task.Delay(2000);
+        await Task.Delay(500);
         Service.Fade(false);
     }
 }
