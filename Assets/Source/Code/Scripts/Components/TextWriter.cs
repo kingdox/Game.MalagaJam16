@@ -7,15 +7,15 @@ public class TextWriter : MonoBehaviour
 {
     public TextMeshProUGUI textTextMeshProUGUI;
     public float letterPause  = 0.1f;
-    public string _text;
+    [HideInInspector] public string _text;
     public Action OnTextStart;
     public Action OnTextEnd;
     public Action OnTextWrite;
     public Action OnTextReset;
 
-    private void Start()
+    public void Awake()
     {
-        StartCoroutine(TypeText());
+        ResetText();
     }
 
     public void SetText(string text)
@@ -23,7 +23,7 @@ public class TextWriter : MonoBehaviour
         _text = text;
     }
     
-    public void StartCoroutine()
+    public void StartWrite()
     {
        StartCoroutine(TypeText());
     }
@@ -54,6 +54,5 @@ public class TextWriter : MonoBehaviour
     {
         SetText("");
         textTextMeshProUGUI.SetText("");
-
     }
 }

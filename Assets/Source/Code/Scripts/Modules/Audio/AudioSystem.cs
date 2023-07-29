@@ -68,7 +68,8 @@ public sealed class AudioSystem : MonoFlux
     }
     [Flux("PlaySound")] public void PlaySound(SoundEnum g) 
     {
-        src_sound.clip = general.Sounds.Get(g);
-        src_sound.Play();
+        // src_sound.clip = general.Sounds.Get(g);
+        // src_sound.Play();
+        src_sound.PlayOneShot(general.Sounds.Get(g));
     }
 }

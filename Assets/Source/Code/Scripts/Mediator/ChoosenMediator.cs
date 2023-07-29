@@ -90,9 +90,9 @@ public class ChoosenMediator : MonoBehaviour
         textView.IsInGoodPosition(true);
         var texts = _dictionaryNewsText[textView];
         titleWriter.SetText(texts.Text_Title.Text);
-        titleWriter.StartCoroutine();
+        titleWriter.StartWrite();
         titleBody.SetText(texts.Text_Description.Text);
-        titleBody.StartCoroutine();
+        titleBody.StartWrite();
         _dictionaryTexPosition.Add(arg1, textView);
         _textsInPlace++;
     }

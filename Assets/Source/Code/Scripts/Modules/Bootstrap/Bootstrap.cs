@@ -5,15 +5,21 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
 using Kingdox.UniFlux.Scenes;
-//using Service;
 using UnityEngine.SceneManagement;
 using XavHelpTo;
 
 public sealed class Bootstrap : MonoFlux
 {
-    //protected override void OnFlux(bool condition) {}
-    //[Flux()] private void Method() => ;
+    
     private static Bootstrap _;
+    private void Awake()
+    {
+        if (SceneManager.sceneCount!=1)
+        {
+            Reset();
+        }
+    }
+
     private IEnumerator Start()
     {
         //FIRST
@@ -32,8 +38,20 @@ public sealed class Bootstrap : MonoFlux
         yield return Service.AddScene(SceneData.ChooseScene); 
         yield return Service.AddScene(SceneData.Intro); 
         yield return Service.AddScene(SceneData.Map); 
-        
+
+
+        // INIT GAME
+        Service.SetBinary("_debug_", Service.GetBinary("_debug_", 0) + 1);
+
+        "Intro.Display".Dispatch(true);
+        "Intro.Start".Dispatch();
+
         // END
         yield return Service.RemoveScene(SceneData.Bootstrap); 
+    }
+
+    [Flux("Reset")] private void Reset()
+    {
+        SceneManager.LoadScene(SceneData.Bootstrap);       
     }
 }

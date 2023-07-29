@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Source/Scenes/ChooseScene.unity
+    path: Assets/Source/Code/Scripts/Modules/ChooseScene/ChooseScene.unity
     guid: faa414b433dec8f45b7a6d3f8740049d
   - enabled: 1
     path: Assets/Source/Code/Scripts/Modules/Bootstrap/Bootstrap.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Source/Code/Scripts/Modules/EventSystem/EventSystem.unity
     guid: fae60dfa1099e498dba9cfaf1ee3fb11
   - enabled: 1
-    path: Assets/Source/Scenes/Map.unity
+    path: Assets/Source/Code/Scripts/Modules/Map/Map.unity
     guid: a568faf6d22c54206a4d1a47f4cc04e0
   - enabled: 1
     path: Assets/Source/Code/Scripts/Modules/Audio/System_Audio.unity
@@ -36,12 +36,12 @@ EditorBuildSettings:
     path: Assets/Source/Code/Scripts/Modules/Fader/Fader.unity
     guid: 03e3c83cb3e774de3bdedb8e9fd7d184
   - enabled: 1
-    path: Assets/Source/Scenes/ChooseScene.unity
+    path: Assets/Source/Code/Scripts/Modules/ChooseScene/ChooseScene.unity
     guid: faa414b433dec8f45b7a6d3f8740049d
   - enabled: 1
-    path: Assets/Source/Scenes/Dia_n.unity
+    path: Assets/Source/Code/Scripts/Modules/Dia_n/Dia_n.unity
     guid: 24a8d87cc09efd245a66ecda46ecea23
   - enabled: 1
-    path: Assets/Source/Scenes/Intro.unity
+    path: Assets/Source/Code/Scripts/Modules/Intro/Intro.unity
     guid: 8f7a890ea6688c34c93bd4d6bb4ef762
   m_configObjects: {}
