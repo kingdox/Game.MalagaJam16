@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Se produce una subida del nivel del mar muy pronunciado en las islas
-        Canarias y las Baleares, dejando a decenas de miles sin hogar.
+      value: Hace varios meses se produjo una subida del nivel del mar muy pronunciada
+        en las islas Canarias y las Baleares, dejando a decenas de miles sin hogar.
     - name: '1 : English'
       enumme: 1
       value: 
