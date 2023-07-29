@@ -6,7 +6,6 @@ public class TextSlot : MonoBehaviour, IDropHandler
 {
     private RectTransform _rectTransform;
     public event Action<TextSlot, TextView> OnSlotIsFilled;
-    public event Action<TextSlot> OnSlotIsReseted;
 
     private void Start()
     {
