@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
-  m_Name: Menu.Title
+  m_Name: News.0.quote.1
   m_EditorClassIdentifier: 
-  _debug_info: Descripcion del juego para poner en contexto al jugador.
+  _debug_info: 
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: El fin del mundo se acerca. Tienes que alertar a la poblacion aunque
-        tengas que jugar sucio.
+      value: "Los terremotos que tambien golpearan Espa\xF1a podrian llegar en cualquier
+        momento. Se recomienda maxima precaucion."
     - name: '1 : English'
       enumme: 1
-      value: 'The end of the world is comming. You must warn your people even if
-        that means using cuestionable means. '
+      value: 
