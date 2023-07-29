@@ -554,9 +554,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_text
+      value: 'THE LAST NEWS
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d4b84a622b370f0468c19031a31352e9, type: 2}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5609191281447370140, guid: d4b84a622b370f0468c19031a31352e9, type: 2}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4494753571470191806, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_Name
       value: TextWriter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764066887501226106, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: _text
+      value: 'El fin del mundo se acerca. Debes de alertar a la poblacion aunque
+        tengas que jugar sucio. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
