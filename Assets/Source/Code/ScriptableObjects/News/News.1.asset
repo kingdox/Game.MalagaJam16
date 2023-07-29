@@ -18,6 +18,12 @@ MonoBehaviour:
   Text_Quotes:
   - {fileID: 11400000, guid: d5ae88eeca44cb841aeb71d28f1d46c1, type: 2}
   - {fileID: 11400000, guid: 60f969a18c13f4c4087c6f28998f9ce2, type: 2}
-  Text_PeopleChat: []
+  Text_PeopleChat:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Attributes:
   - {fileID: 11400000, guid: da26d1811245c47a29b05866e5f60156, type: 2}
