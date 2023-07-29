@@ -17,8 +17,9 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Los terremotos que tambien golpearan Espa\xF1a podrian llegar en cualquier
-        momento. Se recomienda maxima precaucion."
+      value: 'Miles de refugiados se agolpan en las zonas mas elevadas de las islas
+        y aquellos con dinero huyen a la peninsula. '
     - name: '1 : English'
       enumme: 1
-      value: 
+      value: Miles de refugiados se agolpan en las zonas mas elevadas de las islas
+        y aquellos con dinero huyen a la peninsula.

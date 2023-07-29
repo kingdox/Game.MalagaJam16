@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Unos cient\xEDficos descubren un cambio en el nucleo de planeta que
-        provocar\xE1 fuertes terremotos en toda la peninsula. "
+      value: "La industria del videojuego andaluza consigue unos ingresos record
+        colocandose a la cabeza de Espa\xF1a. "
     - name: '1 : English'
       enumme: 1
       value: 

@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Unos cient\xEDficos descubren un cambio en el nucleo de planeta que
-        provocar\xE1 fuertes terremotos en toda la peninsula. "
+      value: Se produce una subida del nivel del mar muy pronunciado en las islas
+        Canarias y las Baleares, dejando a decenas de miles sin hogar.
     - name: '1 : English'
       enumme: 1
       value: 

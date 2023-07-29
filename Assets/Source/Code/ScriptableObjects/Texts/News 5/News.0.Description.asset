@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Unos cient\xEDficos descubren un cambio en el nucleo de planeta que
-        provocar\xE1 fuertes terremotos en toda la peninsula. "
+      value: "Un grupo de investigadores malague\xF1os descubre una cura efectiva
+        y rapida para el ebola"
     - name: '1 : English'
       enumme: 1
       value: 

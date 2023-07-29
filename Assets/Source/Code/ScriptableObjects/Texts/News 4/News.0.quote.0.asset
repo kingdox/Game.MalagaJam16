@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "\xA1Ultima hora! Un grupo de cientificos espa\xF1oles descubre un cambio
-        de temperatura en el nucleo de nuestro planeta que provocara fuertes terremotos."
+      value: "Un equipo especial de la brigada en conjunto con el ej\xE9rcito ha
+        realizado el rescate esta madrugada. "
     - name: '1 : English'
       enumme: 1
       value: 

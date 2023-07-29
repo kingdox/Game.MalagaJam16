@@ -17,7 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Gran Catastrofe
+      value: Las temperaturas siguen subiendo
     - name: '1 : English'
       enumme: 1
       value: 

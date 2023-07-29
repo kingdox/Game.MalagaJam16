@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Los terremotos que tambien golpearan Espa\xF1a podrian llegar en cualquier
-        momento. Se recomienda maxima precaucion."
+      value: "Destacan estudios espa\xF1oles como \u201CSide Quest\u201D con una
+        novedosa narrativa. "
     - name: '1 : English'
       enumme: 1
       value: 

@@ -17,8 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Los terremotos que tambien golpearan Espa\xF1a podrian llegar en cualquier
-        momento. Se recomienda maxima precaucion."
+      value: 'La cura promete ser barata y accesible para los paises menos desarrollados. '
     - name: '1 : English'
       enumme: 1
       value: 

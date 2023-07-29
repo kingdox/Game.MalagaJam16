@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
   m_Name: News.0.Title
   m_EditorClassIdentifier: 
-  _debug_info: Noticia 0
+  _debug_info: 
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Gran Catastrofe
+      value: "\xA1El descubrimiento de la decada!"
     - name: '1 : English'
       enumme: 1
       value: 
