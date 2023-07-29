@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e437030f59134082b8a3f6f0e7b9323, type: 3}
+  m_Name: News.4
+  m_EditorClassIdentifier: 
+  _debug_info: Vacuna :)
+  Text_Title: {fileID: 11400000, guid: aef0c24e28fe1c8499cbf7ed7141ce8f, type: 2}
+  Text_Description: {fileID: 11400000, guid: ab67085eaad929e4caaf9318816a62e8, type: 2}
+  Text_Quotes:
+  - {fileID: 11400000, guid: d0b6fbe5182d7a944b10f93b29f77142, type: 2}
+  - {fileID: 11400000, guid: 77f138fd0e74b784ab3026125f036ff9, type: 2}
+  Text_PeopleChat: []
+  Attributes:
+  - {fileID: 11400000, guid: 01f939023e63e473f8673211d9bcf477, type: 2}
+  - {fileID: 11400000, guid: 01f939023e63e473f8673211d9bcf477, type: 2}
