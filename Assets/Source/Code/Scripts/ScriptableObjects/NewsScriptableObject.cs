@@ -11,16 +11,20 @@ public class NewsScriptableObject : ScriptableObject
 
     [Header("Cosas que se usan en ChooseScene")]
     [Space]
-    public TextScriptableObject Text_Summary;
     public TextScriptableObject Text_Title;
     public TextScriptableObject Text_Description;
     
     [Header("Cosas que se usan en Map (la parte de las noticias)")]
     [Space]
     public TextScriptableObject[] Text_Quotes;
-    
-    // [Header("Cosas que se usan en Map (la parte de la charla con la pareja)")]
-    // [Space]
-    // public TextScriptableObject[] Text_Quotes;
 
+
+    [Header("Cosas que se usan en Map (la parte de las charlas)")]
+    [Space]
+    public PeopleTextScriptableObject[] Text_PeopleChat;
+    
+    
+    [Header("Los puntajes que posse de valor esta noticia, influye en el juego en segundo plano")]
+    [Space]
+    public AttributeScriptableObject[] Attributes;
 }
