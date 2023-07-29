@@ -5,6 +5,7 @@ public class ChoosenMediator : MonoBehaviour
 {
     [SerializeField] private List<TextSlot> textSlots;
     [SerializeField] private List<TextView> textViews;
+    [SerializeField] private TextWriter titleWriter, titleBody;
 
     private Dictionary<TextSlot, TextView> _dictionaryTexPosition;
     private int _textsInPlace;
@@ -51,12 +52,19 @@ public class ChoosenMediator : MonoBehaviour
             textView.OnTextBeginDrag -= TextStartsDrag;
         }
     }
-    
+
+    private void ResetTexts()
+    {
+        Debug.Log("Reset Texts");
+        titleWriter.ResetText();
+        titleBody.ResetText();
+    }
+
     private void ResetSlot(TextSlot obj)
     {
         Debug.Log($"Reset slot {obj}");
         _dictionaryTexPosition.Remove(obj);
-
+        ResetTexts();
         _textsInPlace--;
     }
 
@@ -65,21 +73,23 @@ public class ChoosenMediator : MonoBehaviour
         Debug.Log($"SlotIsFilled {arg1} is filled with {textView}");
         if (_dictionaryTexPosition.ContainsKey(arg1))
         {
-            // Debug.Log($"SlotIsFilled 1");
-
-            textView.SetToInitialPosition();
-            return;
+            Debug.Log($"SlotIsFilled 1");
+            ResetSlot(arg1);
         }
 
-        // Debug.Log($"SlotIsFilled 2");
+        textView.SetToInitialPosition();
+        //Get SO of textView
+        Debug.Log($"SlotIsFilled 2");
         textView.IsInGoodPosition(true);
         textView.SetCompleteText();
-        
+        titleWriter.SetText("Title 1 ");
+        titleWriter.StartCoroutine();
+        titleBody.SetText("Body 1 ");
+        titleBody.StartCoroutine();
         _dictionaryTexPosition.Add(arg1, textView);
         _textsInPlace++;
     }
-
-
+    
     public async void Continue()
     {
         if (_textsInPlace == textSlots.Count)

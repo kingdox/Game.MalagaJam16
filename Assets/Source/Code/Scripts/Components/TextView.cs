@@ -16,7 +16,8 @@ public class TextView : MonoBehaviour
     private bool _inSlot;
 
     public event Action<TextView> OnTextBeginDrag;
-
+    public event Action OnSetTextViewMoves;
+    
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
@@ -31,6 +32,10 @@ public class TextView : MonoBehaviour
         _canvasGroup.alpha = 0.4f;
         OnTextBeginDrag?.Invoke(this);
         _inSlot = false;
+        if (_inSlot)
+        {
+            OnSetTextViewMoves?.Invoke();
+        }
         // Debug.Log("BeginDrag");
     }
 
