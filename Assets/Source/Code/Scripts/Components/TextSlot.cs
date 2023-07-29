@@ -15,9 +15,9 @@ public class TextSlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         var textView = eventData.pointerDrag.GetComponent<TextView>();
-        var textViewRectTransform = textView.GetComponent<RectTransform>();
+        // var textViewRectTransform = textView.GetComponent<RectTransform>();
         
-        textViewRectTransform.position = _rectTransform.position;
+        // textViewRectTransform.anchoredPosition = _rectTransform.anchoredPosition;
         if (!textView) return;
         // Debug.Log("Slot IN");
         OnSlotIsFilled?.Invoke(this, textView);

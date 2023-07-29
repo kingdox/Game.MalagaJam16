@@ -9,14 +9,12 @@ public class TextView : MonoBehaviour
 {
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
-    public Canvas canvas;
+    private Canvas _canvas;
     private Vector2 _initialPosition;
     private bool _wasOutsideScreen;
-    private TextMeshProUGUI textMeshProUGUI;
     private bool _inSlot;
 
     public event Action<TextView> OnTextBeginDrag;
-    public event Action OnSetTextViewMoves;
     
     private void Awake()
     {
@@ -32,10 +30,7 @@ public class TextView : MonoBehaviour
         _canvasGroup.alpha = 0.4f;
         OnTextBeginDrag?.Invoke(this);
         _inSlot = false;
-        if (_inSlot)
-        {
-            OnSetTextViewMoves?.Invoke();
-        }
+
         // Debug.Log("BeginDrag");
     }
 
@@ -52,15 +47,15 @@ public class TextView : MonoBehaviour
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 
     public void OnDrop(PointerEventData eventData)
     {
         var textViewBehind = eventData.pointerDrag.GetComponent<TextView>();
-        if(!textViewBehind)return;
+        if(!textViewBehind) return;
         textViewBehind.SetToInitialPosition();
-        // Debug.Log("RF");
+        // Debug.Log("OnDrop");
     }
 
     public void OnInitializePotentialDrag(PointerEventData eventData)
@@ -74,15 +69,16 @@ public class TextView : MonoBehaviour
 
         _rectTransform.anchoredPosition = _initialPosition;
     }
-
-    public void SetCompleteText()
-    {
-    }
-
+    
     public void IsInGoodPosition(bool status)
     {
         // Debug.Log($"IsInGoodPosition {status}");
 
         _inSlot = status;
+    }
+
+    public void Init(Canvas canvas1)
+    {
+        _canvas = canvas1;
     }
 }
