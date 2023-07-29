@@ -17,7 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "\xA1El descubrimiento de la decada!"
+      value: Algo nunca visto.
     - name: '1 : English'
       enumme: 1
       value: 

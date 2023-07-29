@@ -17,9 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: 'Miles de refugiados se agolpan en las zonas mas elevadas de las islas
-        y aquellos con dinero huyen a la peninsula. '
+      value: Los mineros se encuentran bien y han sido atendidos por los servicios
+        medicos.
     - name: '1 : English'
       enumme: 1
-      value: Miles de refugiados se agolpan en las zonas mas elevadas de las islas
-        y aquellos con dinero huyen a la peninsula.
+      value: 

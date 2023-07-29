@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Un grupo de investigadores malague\xF1os descubre una cura efectiva
-        y rapida para el ebola"
+      value: "La industria del videojuego andaluza consigue unos ingresos record
+        colocandose a la cabeza de Espa\xF1a. "
     - name: '1 : English'
       enumme: 1
       value: 

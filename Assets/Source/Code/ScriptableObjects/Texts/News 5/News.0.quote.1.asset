@@ -17,7 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: 'La cura promete ser barata y accesible para los paises menos desarrollados. '
+      value: "Destacan estudios espa\xF1oles como \u201CSide Quest\u201D con una
+        novedosa narrativa. "
     - name: '1 : English'
       enumme: 1
       value: 

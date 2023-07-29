@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Los investigadores de Malaga capital han conseguido una vacuna para
-        el ebola tras 4 a\xF1os de trabajo."
+      value: Tras el ultimo analisis de mercado la industria andaluza ha conseguido
+        unos ingresos record de 1000 millones de euros.
     - name: '1 : English'
       enumme: 1
       value: 

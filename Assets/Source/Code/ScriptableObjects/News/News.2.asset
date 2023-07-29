@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e437030f59134082b8a3f6f0e7b9323, type: 3}
-  m_Name: News.0
+  m_Name: News.2
   m_EditorClassIdentifier: 
-  _debug_info: Nucleo del planeta
-  Text_Title: {fileID: 11400000, guid: c1f535d36e28c884daa09285f3dfc7ce, type: 2}
-  Text_Description: {fileID: 11400000, guid: 098ca97b9a955214a90d7349e8e6f7c6, type: 2}
+  _debug_info: Temperaturas
+  Text_Title: {fileID: 0}
+  Text_Description: {fileID: 0}
   Text_Quotes: []
   Text_PeopleChat: []
   Attributes:
-  - {fileID: 11400000, guid: da26d1811245c47a29b05866e5f60156, type: 2}
-  - {fileID: 11400000, guid: da26d1811245c47a29b05866e5f60156, type: 2}
+  - {fileID: 11400000, guid: 01f939023e63e473f8673211d9bcf477, type: 2}

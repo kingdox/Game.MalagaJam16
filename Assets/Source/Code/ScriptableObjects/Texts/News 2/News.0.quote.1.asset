@@ -17,8 +17,9 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: 'Aunque sea temporal, muchos de los diplomaticos que han abandonado
-        el edificio de Nueva York ponen en duda un pronto regreso de la organizacion. '
+      value: 'Miles de refugiados se agolpan en las zonas mas elevadas de las islas
+        y aquellos con dinero huyen a la peninsula. '
     - name: '1 : English'
       enumme: 1
-      value: 
+      value: Miles de refugiados se agolpan en las zonas mas elevadas de las islas
+        y aquellos con dinero huyen a la peninsula.

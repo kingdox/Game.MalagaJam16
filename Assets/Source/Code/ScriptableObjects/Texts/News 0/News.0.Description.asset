@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c368c330df642349ce3ded3316da8d, type: 3}
-  m_Name: 0 (Emlity)
+  m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
+  m_Name: News.0.Description
   m_EditorClassIdentifier: 
-  _debug_info: Saludo
+  _debug_info: 
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Hola
+      value: 'Unos cientificos descubren un cambio en el nucleo de planeta '
     - name: '1 : English'
       enumme: 1
       value: 
-  people: 0
