@@ -282,23 +282,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.74627787
+      value: 0.721
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.07142883
+      value: 0.07371744
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.08465643
+      value: 0.050738633
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -1.3209991
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -330,11 +330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2.053009
       objectReference: {fileID: 0}
     - target: {fileID: 2230436034288027986, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 512
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 4494753571470191806, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_Name
