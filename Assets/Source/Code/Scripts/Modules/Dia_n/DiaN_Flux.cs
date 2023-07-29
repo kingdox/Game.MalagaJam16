@@ -10,15 +10,20 @@ public sealed class DiaN_Flux : MonoFlux
 
     private void Awake()
     {
-        // canvas.enabled = false;
+        Display(false);
+    }
+    [Flux("Intro.Display")] private void Display(bool condition)  => canvas.enabled = condition;
+    [Flux("DayN.Start")] private void StartWrite()
+    {
+        Write();
     }
 
     private void Start()
     {
-        Method();
+        Write();
     }
 
-    private void Method()
+    private void Write()
     {
         "DayN".GetState(out int daysLeft);
         var originalText = textScriptableObject.Text;
