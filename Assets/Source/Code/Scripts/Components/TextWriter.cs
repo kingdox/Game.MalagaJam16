@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using Kingdox.UniFlux;
 
 public class TextWriter : MonoBehaviour
 {
@@ -19,10 +18,20 @@ public class TextWriter : MonoBehaviour
         StartCoroutine(TypeText());
     }
 
+    public void SetText(string text)
+    {
+        _text = text;
+    }
+    
+    public void StartCoroutine()
+    {
+       StartCoroutine(TypeText());
+    }
+    
     private IEnumerator TypeText()
     {
         OnTextStart?.Invoke();
-        string currentText = _text;
+        var currentText = _text;
         foreach (char letter in currentText)
         {
             if(currentText == _text)
@@ -39,5 +48,12 @@ public class TextWriter : MonoBehaviour
         }
         OnTextEnd?.Invoke();
         yield return default;
+    }
+
+    public void ResetText()
+    {
+        SetText("");
+        textTextMeshProUGUI.SetText("");
+
     }
 }

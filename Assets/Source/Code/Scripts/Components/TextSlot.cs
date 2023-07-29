@@ -14,12 +14,12 @@ public class TextSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("Slot IN");
         var textView = eventData.pointerDrag.GetComponent<TextView>();
-        eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-            _rectTransform.anchoredPosition;
+        var textViewRectTransform = textView.GetComponent<RectTransform>();
+        
+        textViewRectTransform.position = _rectTransform.position;
         if (!textView) return;
+        // Debug.Log("Slot IN");
         OnSlotIsFilled?.Invoke(this, textView);
     }
-
 }

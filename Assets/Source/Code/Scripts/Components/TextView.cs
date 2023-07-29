@@ -1,26 +1,29 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TextView : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
+public class TextView : MonoBehaviour
+    , IBeginDragHandler, IEndDragHandler,
     IDragHandler, IDropHandler, IInitializePotentialDragHandler
 {
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
     public Canvas canvas;
-    private Vector2 _lastPosition;
+    private Vector2 _initialPosition;
     private bool _wasOutsideScreen;
-    private Camera _cameraMain;
-    private bool _wasInsideSlot;
+    private TextMeshProUGUI textMeshProUGUI;
+    private bool _inSlot;
 
     public event Action<TextView> OnTextBeginDrag;
-    public event Action<TextView> OnTextViewMoving;
-
+    public event Action OnSetTextViewMoves;
+    
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
-        _cameraMain = Camera.main;
+        
+        _initialPosition = _rectTransform.anchoredPosition;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -28,62 +31,36 @@ public class TextView : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.4f;
         OnTextBeginDrag?.Invoke(this);
-        Debug.Log("BeginDrag");
-
-                  
-                  
-                  // Physics2D.RaycastNonAlloc(_rectTransform.anchoredPosition, Vector2.up, raycastResults, int.MaxValue, layerMask);
-                  // Physics2D.RaycastNonAlloc(_rectTransform.anchoredPosition, Vector2.up, raycastResults, int.MaxValue, layerMask);
-        // if (raycastResults.Length <= 0) return;
-        // if (raycastResults[0].collider == null) return;
-        // Debug.Log("TEXT VIEW SLOT IN");
+        _inSlot = false;
+        if (_inSlot)
+        {
+            OnSetTextViewMoves?.Invoke();
+        }
+        // Debug.Log("BeginDrag");
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1;
-        // Physics2D.RaycastNonAlloc(_rectTransform.anchoredPosition, eventData., raycastResults, MathF.i));
-        // if (raycastResults.Length > 0)
-        // {
-        //     if (raycastResults[0].collider == null) return;
-        //     var slot = raycastResults[0].transform.GetComponent<TextSlot>();
-        //     if (slot)
-        //     {
-        //         slot.IsUsed();
-        //         Debug.Log("SLOT IN");
-        //     }
-        // }
-        Debug.Log("DFFFF");
-        if (!_wasOutsideScreen) return;
-        Debug.Log($"Was outside");
-        _wasOutsideScreen = false;
-        _rectTransform.anchoredPosition = _lastPosition;
+
+        // Debug.Log("OnEndDrag");
+        if (_inSlot) return;
+        // Debug.Log($"Was outside");
+        SetToInitialPosition();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         _rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        bool isVisibleFrom = _rectTransform.IsVisibleFrom(_cameraMain);
-        bool isFullyVisibleFrom = _rectTransform.IsFullyVisibleFrom(_cameraMain);
-        OnTextViewMoving?.Invoke(this);
-        _wasOutsideScreen = !isFullyVisibleFrom;
-        if (!_wasOutsideScreen)
-        {
-            _lastPosition = _rectTransform.anchoredPosition;
-            Debug.Log($"Saving las position");
-
-        }
-
-        // Debug.Log($"WAS OUTSIDE {!isVisibleFrom || !isFullyVisibleFrom}");
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (!_wasOutsideScreen) return;
-        Debug.Log($"Was outside");
-        _wasOutsideScreen = false;
-        SetToLastPosition();
+        var textViewBehind = eventData.pointerDrag.GetComponent<TextView>();
+        if(!textViewBehind)return;
+        textViewBehind.SetToInitialPosition();
+        // Debug.Log("RF");
     }
 
     public void OnInitializePotentialDrag(PointerEventData eventData)
@@ -91,13 +68,21 @@ public class TextView : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         eventData.useDragThreshold = false;
     }
 
-    public void SetToLastPosition()
+    public void SetToInitialPosition()
     {
-        _rectTransform.anchoredPosition = _lastPosition;
+        // Debug.Log("Set To Initial Position");
+
+        _rectTransform.anchoredPosition = _initialPosition;
     }
 
-    public void SetInsideSlot(bool b)
+    public void SetCompleteText()
     {
-        _wasInsideSlot = true;
+    }
+
+    public void IsInGoodPosition(bool status)
+    {
+        // Debug.Log($"IsInGoodPosition {status}");
+
+        _inSlot = status;
     }
 }
