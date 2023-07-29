@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
+using Kingdox.UniFlux.Scenes;
 //using Service;
 using UnityEngine.SceneManagement;
 using XavHelpTo;
@@ -15,15 +16,24 @@ public sealed class Bootstrap : MonoFlux
     private static Bootstrap _;
     private IEnumerator Start()
     {
-
+        //FIRST
         yield return SceneManager.LoadSceneAsync(SceneData.Scene, LoadSceneMode.Additive);
-        yield return SceneManager.LoadSceneAsync(SceneData.Updates, LoadSceneMode.Additive);
-        yield return SceneManager.LoadSceneAsync(SceneData.Click, LoadSceneMode.Additive);
-        yield return SceneManager.LoadSceneAsync(SceneData.Binary, LoadSceneMode.Additive);
-        yield return SceneManager.LoadSceneAsync(SceneData.EventSystem, LoadSceneMode.Additive);
 
-        // yield return Kingdox.UniFlux.Scenes.Key.Add.Dispatch<IEnumerator>();
-        yield return 0;
+        // ESENTIALS
+        yield return Service.AddScene(SceneData.Updates);
+        yield return Service.AddScene(SceneData.Click);
+        yield return Service.AddScene(SceneData.Binary);
+        yield return Service.AddScene(SceneData.EventSystem);
+        yield return Service.AddScene(SceneData.System_Audio); 
+        yield return Service.AddScene(SceneData.Fader); 
 
+        // EXPERIMENTAL
+        yield return Service.AddScene(SceneData.Dia_n); 
+        yield return Service.AddScene(SceneData.ChooseScene); 
+        yield return Service.AddScene(SceneData.Intro); 
+        yield return Service.AddScene(SceneData.Map); 
+        
+        // END
+        yield return Service.RemoveScene(SceneData.Bootstrap); 
     }
 }

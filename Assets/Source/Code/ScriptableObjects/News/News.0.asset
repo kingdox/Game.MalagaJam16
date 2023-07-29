@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: News.0
   m_EditorClassIdentifier: 
   _debug_info: "Esto es la noticioa \xBA"
-  Text_Summary: {fileID: 11400000, guid: 43964ebeb637a4c4188d791f75b1932f, type: 2}
   Text_Title: {fileID: 11400000, guid: 609cd6e045504478e8dd90e0eb8ecc7d, type: 2}
   Text_Description: {fileID: 11400000, guid: ea40715e0f20642c983297f0ffb9d99e, type: 2}
   Text_Quotes:
   - {fileID: 11400000, guid: 39cf278791e4d4773bf45320b6c4f2c1, type: 2}
   - {fileID: 11400000, guid: 720bc06a3b1e94075ada9f290c1dd465, type: 2}
+  Text_PeopleChat:
+  - {fileID: 11400000, guid: 754b8614f306b443b9cd18ae3bb232f6, type: 2}
+  - {fileID: 11400000, guid: 754b8614f306b443b9cd18ae3bb232f6, type: 2}
+  Attributes:
+  - {fileID: 11400000, guid: 01f939023e63e473f8673211d9bcf477, type: 2}
