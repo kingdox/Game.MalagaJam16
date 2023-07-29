@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using XavHelpTo.Get;
 
 public class TextView : MonoBehaviour
     , IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler, IInitializePotentialDragHandler
@@ -17,8 +18,17 @@ public class TextView : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.4f;
         _inSlot = false;
+        var soundEnum = GetRandomSoundForMMO();
 
+        Service.PlaySound(soundEnum);
         // Debug.Log("BeginDrag");
+    }
+
+    private SoundEnum GetRandomSoundForMMO()
+    {
+        var soundEnum = Get.Range(SoundEnum.GrabPaper_1, SoundEnum.GrabPaper_2, SoundEnum.GrabPaper_3);
+
+        return soundEnum;
     }
 
     public void OnEndDrag(PointerEventData eventData)
