@@ -72,4 +72,9 @@ public sealed class AudioSystem : MonoFlux
         // src_sound.Play();
         src_sound.PlayOneShot(general.Sounds.Get(g));
     }
+    [Flux("StopMusic")] public void StopMusic() 
+    {
+        volume_music_A_target=0;
+        volume_music_B_target=0;   
+    }
 }

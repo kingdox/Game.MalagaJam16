@@ -213,14 +213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_text
-      value: 'THE LAST NEWS
-
-
-'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_fontAsset
@@ -613,14 +610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_text
-      value: 'THE LAST NEWS
-
-
-'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3555538905249539585, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
       propertyPath: m_fontAsset
