@@ -1,34 +1,19 @@
-using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TextView : MonoBehaviour
-    , IBeginDragHandler, IEndDragHandler,
-    IDragHandler, IDropHandler, IInitializePotentialDragHandler
+    , IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler, IInitializePotentialDragHandler
 {
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
     private Canvas _canvas;
     private Vector2 _initialPosition;
-    private bool _wasOutsideScreen;
     private bool _inSlot;
-
-    public event Action<TextView> OnTextBeginDrag;
-    
-    private void Awake()
-    {
-        _rectTransform = GetComponent<RectTransform>();
-        _canvasGroup = GetComponent<CanvasGroup>();
-        
-        _initialPosition = _rectTransform.anchoredPosition;
-    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.4f;
-        OnTextBeginDrag?.Invoke(this);
         _inSlot = false;
 
         // Debug.Log("BeginDrag");
@@ -53,7 +38,7 @@ public class TextView : MonoBehaviour
     public void OnDrop(PointerEventData eventData)
     {
         var textViewBehind = eventData.pointerDrag.GetComponent<TextView>();
-        if(!textViewBehind) return;
+        if (!textViewBehind) return;
         textViewBehind.SetToInitialPosition();
         // Debug.Log("OnDrop");
     }
@@ -69,7 +54,7 @@ public class TextView : MonoBehaviour
 
         _rectTransform.anchoredPosition = _initialPosition;
     }
-    
+
     public void IsInGoodPosition(bool status)
     {
         // Debug.Log($"IsInGoodPosition {status}");
@@ -80,5 +65,9 @@ public class TextView : MonoBehaviour
     public void Init(Canvas canvas1)
     {
         _canvas = canvas1;
+        _rectTransform = GetComponent<RectTransform>();
+        _canvasGroup = GetComponent<CanvasGroup>();
+
+        _initialPosition = _rectTransform.anchoredPosition;
     }
 }

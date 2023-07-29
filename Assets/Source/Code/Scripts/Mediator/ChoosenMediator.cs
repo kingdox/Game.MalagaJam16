@@ -10,7 +10,6 @@ public class ChoosenMediator : MonoBehaviour
 
     private Dictionary<TextSlot, TextView> _dictionaryTexPosition;
     private int _textsInPlace;
-    private TextView _currentTextClicked;
 
     void Start()
     {
@@ -23,23 +22,7 @@ public class ChoosenMediator : MonoBehaviour
         foreach (var textView in textViews)
         {
             textView.Init(canvas);
-            textView.OnTextBeginDrag += TextStartsDrag;
         }
-    }
-
-    private void TextStartsDrag(TextView textView)
-    {
-        TextSlot elementToDelete = null;
-        foreach (var (key, value) in _dictionaryTexPosition)
-        {
-            if (value == textView)
-            {
-                elementToDelete = key;
-            }
-        }
-    
-        if (elementToDelete == null) return;
-        ResetSlot(elementToDelete);
     }
 
     private void OnDestroy()
@@ -48,11 +31,6 @@ public class ChoosenMediator : MonoBehaviour
         {
             textSlot.OnSlotIsFilled -= SlotIsFilled;
         }
-
-        foreach (var textView in textViews)
-        {
-            textView.OnTextBeginDrag -= TextStartsDrag;
-        }
     }
 
     private void ResetTexts()
@@ -60,14 +38,13 @@ public class ChoosenMediator : MonoBehaviour
         // Debug.Log("Reset Texts");
         titleWriter.ResetText();
         titleBody.ResetText();
+        _textsInPlace--;
     }
 
-    private void ResetSlot(TextSlot obj)
+    private void RemoveSlot(TextSlot obj)
     {
         Debug.Log($"Reset slot {obj}");
         _dictionaryTexPosition.Remove(obj);
-        ResetTexts();
-        _textsInPlace--;
     }
 
     private void SlotIsFilled(TextSlot arg1, TextView textView)
@@ -76,7 +53,8 @@ public class ChoosenMediator : MonoBehaviour
         if (_dictionaryTexPosition.ContainsKey(arg1))
         {
             // Debug.Log($"SlotIsFilled 1");
-            ResetSlot(arg1);
+            RemoveSlot(arg1);
+            ResetTexts();
         }
 
         textView.SetToInitialPosition();
@@ -90,13 +68,14 @@ public class ChoosenMediator : MonoBehaviour
         _dictionaryTexPosition.Add(arg1, textView);
         _textsInPlace++;
     }
-    
+
     public async void Continue()
     {
         if (_textsInPlace == textSlots.Count)
         {
             //OK
         }
+
         // await 
         Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
     }
