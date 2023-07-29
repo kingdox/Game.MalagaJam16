@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using XavHelpTo.Get;
+using XavHelpTo.Know;
 
 public class TextWriter : MonoBehaviour
 {
@@ -41,14 +43,8 @@ public class TextWriter : MonoBehaviour
                 
                 if(canPlaySound)
                 {
-                    //TODO
-                    //Nota hay 5 tipos de sonidos
-                    // SoundEnum.Key_1
-                    // SoundEnum.Key_2
-                    // SoundEnum.Key_3
-                    // SoundEnum.Key_4
-                    // SoundEnum.Key_5
-                    // Service.PlaySound();
+                    SoundEnum s = Get.Range(SoundEnum.Key_1, SoundEnum.Key_2, SoundEnum.Key_3, SoundEnum.Key_4, SoundEnum.Key_5);
+                    Service.PlaySound(s);
                 }
 
                 yield return new WaitForSeconds(letterPause);
