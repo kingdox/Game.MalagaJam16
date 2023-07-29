@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
   m_Name: News.0.quote.0
   m_EditorClassIdentifier: 
-  _debug_info: 
+  _debug_info: "\xA1Gran Catastrofe!"
   Texts:
     list:
     - name: '0 : Spanish'

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
   m_Name: Menu.Title
   m_EditorClassIdentifier: 
-  _debug_info: 
+  _debug_info: Descripcion del juego para poner en contexto al jugador.
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: aa
+      value: El fin del mundo se acerca. Tienes que alertar a la poblacion aunque
+        tengas que jugar sucio.
     - name: '1 : English'
       enumme: 1
-      value: 
+      value: 'The end of the world is comming. You must warn your people even if
+        that means using cuestionable means. '

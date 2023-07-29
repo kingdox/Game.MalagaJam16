@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
   m_Name: TitleGame
   m_EditorClassIdentifier: 
-  _debug_info: Titulo de nuestro juego
+  _debug_info: 'THE LAST NEWS
+
+'
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Las \xDAltimas Noticias"
+      value: LAS ULTIMAS NOTICIAS
     - name: '1 : English'
       enumme: 1
-      value: The Last News
+      value: 'THE LAST NEWS '
