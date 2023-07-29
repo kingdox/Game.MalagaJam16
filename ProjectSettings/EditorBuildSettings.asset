@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Packages/com.kingdox.uniflux.scene/Runtime/UniFlux.Scene.unity
     guid: 3c2d68bfc8bac42bb8c8035514b7cf7c
+  - enabled: 1
+    path: Assets/Source/Code/Scripts/Modules/EventSystem/EventSystem.unity
+    guid: fae60dfa1099e498dba9cfaf1ee3fb11
   m_configObjects: {}
