@@ -1,19 +1,36 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ChoosenMediator : MonoBehaviour
 {
     [SerializeField] private List<TextSlot> textSlots;
     [SerializeField] private List<TextView> textViews;
+    [SerializeField] private List<NewsScriptableObject> newsScriptableObjects;
     [SerializeField] private TextWriter titleWriter, titleBody;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextScriptableObject titleTextScriptableObject;
 
     private Dictionary<TextSlot, TextView> _dictionaryTexPosition;
+    private Dictionary<TextView, NewsScriptableObject> _dictionaryNewsText;
     private int _textsInPlace;
+
+    private void Awake()
+    {
+        SetStatus(false);
+    }
+
+    public void SetStatus(bool status)
+    {
+        canvas.enabled = status;
+    }
 
     void Start()
     {
         _dictionaryTexPosition = new Dictionary<TextSlot, TextView>();
+        _dictionaryNewsText = new Dictionary<TextView, NewsScriptableObject>();
         foreach (var textSlot in textSlots)
         {
             textSlot.OnSlotIsFilled += SlotIsFilled;
@@ -23,6 +40,16 @@ public class ChoosenMediator : MonoBehaviour
         {
             textView.Init(canvas);
         }
+
+        for (var index = 0; index < newsScriptableObjects.Count; index++)
+        {
+            var newsScriptableObject = newsScriptableObjects[index];
+            var textView = textViews[index];
+            textView.SetText(newsScriptableObject.Text_Title);
+            _dictionaryNewsText.Add(textViews[index], newsScriptableObject);
+        }
+
+        title.SetText(titleTextScriptableObject.Text);
     }
 
     private void OnDestroy()
@@ -61,9 +88,10 @@ public class ChoosenMediator : MonoBehaviour
         //Get SO of textView
         Debug.Log($"SlotIsFilled 2 {textView.name}");
         textView.IsInGoodPosition(true);
-        titleWriter.SetText("Title 1 ");
+        var texts = _dictionaryNewsText[textView];
+        titleWriter.SetText(texts.Text_Title.Text);
         titleWriter.StartCoroutine();
-        titleBody.SetText("Body 1 ");
+        titleBody.SetText(texts.Text_Description.Text);
         titleBody.StartCoroutine();
         _dictionaryTexPosition.Add(arg1, textView);
         _textsInPlace++;

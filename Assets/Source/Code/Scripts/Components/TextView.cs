@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,7 @@ public class TextView : MonoBehaviour
     private Canvas _canvas;
     private Vector2 _initialPosition;
     private bool _inSlot;
+    [SerializeField] private TextMeshProUGUI title;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -69,5 +71,10 @@ public class TextView : MonoBehaviour
         _canvasGroup = GetComponent<CanvasGroup>();
 
         _initialPosition = _rectTransform.anchoredPosition;
+    }
+
+    public void SetText(TextScriptableObject variableTextTitle)
+    {
+        title.SetText(variableTextTitle.Text);
     }
 }
