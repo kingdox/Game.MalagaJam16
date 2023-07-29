@@ -1,5 +1,7 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
+using XavHelpTo;
 
 public sealed class DiaN_Flux : MonoFlux
 {
@@ -12,7 +14,10 @@ public sealed class DiaN_Flux : MonoFlux
     {
         Display(false);
     }
-    [Flux("Intro.Display")] private void Display(bool condition)  => canvas.enabled = condition;
+
+    [Flux("DayN.Display")]
+    private void Display(bool condition) => canvas.enabled = condition;
+
     [Flux("DayN.Start")] private void StartWrite()
     {
         Write();
@@ -20,7 +25,7 @@ public sealed class DiaN_Flux : MonoFlux
 
     private void Start()
     {
-        Write();
+        // Write();
     }
 
     private void Write()
@@ -30,5 +35,20 @@ public sealed class DiaN_Flux : MonoFlux
         var formattedText = string.Format(originalText, daysLeft);
         textWriter.SetText(formattedText);
         textWriter.StartWrite();
+        textWriter.OnTextEnd += GoToNextScene;
+    }
+
+    private async void GoToNextScene()
+    {
+        Service.Fade(true);
+        await Task.Delay(2000);
+        textWriter.OnTextEnd -= GoToNextScene;        
+        textWriter.ResetText();
+        Display(false);
+        await Task.Delay(2000);
+        "Choice.Display".Dispatch(true);
+        Service.Fade(false);
+        "Choice.Start".Dispatch();
+
     }
 }

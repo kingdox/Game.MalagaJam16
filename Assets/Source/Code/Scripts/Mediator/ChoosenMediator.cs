@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Kingdox.UniFlux;
 using TMPro;
 using UnityEngine;
 
-public class ChoosenMediator : MonoBehaviour
+public class ChoosenMediator : MonoFlux
 {
     [SerializeField] private List<TextSlot> textSlots;
     [SerializeField] private List<TextView> textViews;
@@ -18,18 +18,24 @@ public class ChoosenMediator : MonoBehaviour
     private Dictionary<TextView, NewsScriptableObject> _dictionaryNewsText;
     private int _textsInPlace;
 
-    [Flux("Intro.Display")] private void Display(bool condition)  => canvas.enabled = condition;
-    [Flux("DayN.Start")] private void StartWrite()
+    [Flux("Choice.Display")]
+    private void Display(bool condition) => canvas.enabled = condition;
+
+    [Flux("Choice.Start")]
+    private void StartWrite()
     {
         Init();
     }
+
     private void Awake()
     {
         Display(false);
     }
-    
+
     private void Init()
     {
+        Service.PlayMusic(MusicEnum.Elecciones);
+        ResetTexts();
         _dictionaryTexPosition = new Dictionary<TextSlot, TextView>();
         _dictionaryNewsText = new Dictionary<TextView, NewsScriptableObject>();
         foreach (var textSlot in textSlots)
@@ -66,7 +72,7 @@ public class ChoosenMediator : MonoBehaviour
         // Debug.Log("Reset Texts");
         titleWriter.ResetText();
         titleBody.ResetText();
-        _textsInPlace--;
+        _textsInPlace = 0;
     }
 
     private void RemoveSlot(TextSlot obj)
@@ -98,14 +104,24 @@ public class ChoosenMediator : MonoBehaviour
         _textsInPlace++;
     }
 
-    public async void Continue()
+    public void Continue()
     {
+        Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
         if (_textsInPlace == textSlots.Count)
         {
-            //OK
+            GoToNextScene();
         }
+    }
 
-        // await 
-        Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
+    private async void GoToNextScene()
+    {
+        titleBody.ResetText();
+        Service.Fade(true);
+        await Task.Delay(2000);
+        Display(false);
+        await Task.Delay(2000);
+        "Map.Display".Dispatch(true);
+        Service.Fade(false);
+        "Map.Start".Dispatch();
     }
 }
