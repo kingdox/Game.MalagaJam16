@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +10,14 @@ public class MapFlux : MonoFlux
     [SerializeField] private Canvas canvas;
 
     [SerializeField] private DialogSystem dialogSystem;
+    private bool _enableEnter, _isShowingQuote;
+    private int indexText;
+    private NewsScriptableObject currentNew;
+
+    protected override void OnFlux(in bool condition)
+    {
+        condition.Subscribe(ref dialogSystem.OnEnableEnter, EnableEnter);
+    }
 
     [Flux("Map.Display")]
     private void Display(bool condition) => canvas.enabled = condition;
@@ -26,10 +35,63 @@ public class MapFlux : MonoFlux
 
     private void Init()
     {
+        "CurrentNew".GetState(out currentNew);
+        _isShowingQuote = true;
         dialogSystem.Init();
         Service.PlayMusic(MusicEnum.Casa);
-        dialogSystem.OnLastTextIsShown += LastTextShown;
-        LastTextShown();
+        indexText = 0;
+        dialogSystem.SetText(currentNew.Text_Quotes[indexText]);
+    }
+
+    [Flux(Kingdox.UniFlux.Click.Click.Key.OnClickEnterNew)]
+    private void OnClickEnter()
+    {
+        if (!_enableEnter) return;
+        _enableEnter = false;
+        UpdateTextIndex();
+        Debug.Log("AAA");
+    }
+
+    private void UpdateTextIndex()
+    {
+        indexText++;
+        if (_isShowingQuote)
+        {
+            if (indexText < currentNew.Text_Quotes.Length)
+            {
+                dialogSystem.ResetTexts();
+
+                dialogSystem.SetText(currentNew.Text_Quotes[indexText]);
+                return;
+            }
+
+            indexText = 0;
+            WritePeopleText();
+
+            _isShowingQuote = false;
+        }
+        else
+        {
+            if (indexText < currentNew.Text_PeopleChat.Length)
+            {
+                WritePeopleText();
+            }
+            else
+            {
+                LastTextShown();
+            }
+        }
+    }
+
+    private void WritePeopleText()
+    {
+        dialogSystem.ResetTexts();
+        dialogSystem.SetText(currentNew.Text_PeopleChat[indexText]);
+    }
+
+    private void EnableEnter()
+    {
+        _enableEnter = true;
     }
 
     private void LastTextShown()
@@ -49,13 +111,13 @@ public class MapFlux : MonoFlux
 
     private async void GoToChoiceScene()
     {
+        dialogSystem.ResetTexts();
         Service.Fade(true);
         await Task.Delay(2000);
-
         Display(false);
         await Task.Delay(2000);
-        "Choice.Display".Dispatch(true);
+        "DayN.Display".Dispatch(true);
         Service.Fade(false);
-        "Choice.Start".Dispatch();
+        "DayN.Start".Dispatch();
     }
 }

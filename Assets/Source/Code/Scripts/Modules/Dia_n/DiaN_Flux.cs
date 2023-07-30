@@ -40,12 +40,13 @@ public sealed class DiaN_Flux : MonoFlux
 
     private async void GoToNextScene()
     {
-        Service.Fade(true);
         await Task.Delay(2000);
+        Service.Fade(true);
+        await Task.Delay(1000);
         textWriter.OnTextEnd -= GoToNextScene;        
         textWriter.ResetText();
         Display(false);
-        await Task.Delay(2000);
+        await Task.Delay(1000);
         "Choice.Display".Dispatch(true);
         Service.Fade(false);
         "Choice.Start".Dispatch();

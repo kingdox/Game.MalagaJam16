@@ -52,7 +52,7 @@ public class ChoosenMediator : MonoFlux
         {
             var newsScriptableObject = newsScriptableObjects[index];
             var textView = textViews[index];
-            textView.SetText(newsScriptableObject.Text_Title);
+            textView.SetNew(newsScriptableObject);
             _dictionaryNewsText.Add(textViews[index], newsScriptableObject);
         }
 
@@ -101,7 +101,9 @@ public class ChoosenMediator : MonoFlux
         titleBody.SetText(texts.Text_Description.Text);
         titleBody.StartWrite();
         _dictionaryTexPosition.Add(arg1, textView);
+        var currentNew = textView.GetNew();
         _textsInPlace++;
+        "CurrentNew".DispatchState(currentNew);
     }
 
     public void Continue()
