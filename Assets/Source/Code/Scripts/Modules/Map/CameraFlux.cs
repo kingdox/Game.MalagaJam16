@@ -8,7 +8,7 @@ public sealed class CameraFlux : MonoFlux
     public bool changePos;
     public Camera camerar;
     private void Awake() => camerar.orthographicSize=MIN;
-    [Flux("Camera.Change")]private void Change() => changePos = !changePos;
+    [Flux("Camera.Change")]private void Change(bool condition) => changePos = condition;
     [Flux(Kingdox.UniFlux.Updates.UpdatesService.Key.OnUpdate)] private void OnUpdate() => Move();
     private void Move() => camerar.orthographicSize = Mathf.MoveTowards(camerar.orthographicSize,changePos?MAX:MIN,speed*Time.deltaTime);
 }
