@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Emily
   m_EditorClassIdentifier: 
   _debug_info: La protagonista del juego
-  Name:
+  Names:
     list:
     - name: '0 : Spanish'
       enumme: 0

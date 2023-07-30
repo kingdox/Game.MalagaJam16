@@ -15,7 +15,7 @@ MonoBehaviour:
   _debug_info: 'La pareja de Emily
 
 '
-  Name:
+  Names:
     list:
     - name: '0 : Spanish'
       enumme: 0
