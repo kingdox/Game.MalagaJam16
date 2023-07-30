@@ -49,7 +49,6 @@ public class MapFlux : MonoFlux
         if (!_enableEnter) return;
         _enableEnter = false;
         UpdateTextIndex();
-        Debug.Log("AAA");
     }
 
     private void UpdateTextIndex()
@@ -64,11 +63,15 @@ public class MapFlux : MonoFlux
                 dialogSystem.SetText(currentNew.Text_Quotes[indexText]);
                 return;
             }
+            else
+            {
+                // TErmina proceso de quotes
+                "Camera.Change".Dispatch(true);
+                indexText = 0;
+                WritePeopleText();
+                _isShowingQuote = false;
+            }
 
-            indexText = 0;
-            WritePeopleText();
-
-            _isShowingQuote = false;
         }
         else
         {
@@ -109,21 +112,9 @@ public class MapFlux : MonoFlux
         GoToChoiceScene();
     }
 
-    private async void GoToChoiceScene()
+    private void GoToChoiceScene()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Debug.Log("Empezaos Corrotina MapFlux")
-        StartCoroutine(GoToNextActivityCoroutine());
-        return;
-#endif
-        dialogSystem.ResetTexts();
-        Service.Fade(true);
-        await Task.Delay(2000);
-        Display(false);
-        await Task.Delay(2000);
-        "DayN.Display".Dispatch(true);
-        Service.Fade(false);
-        "DayN.Start".Dispatch();
+        StartCoroutine(GoToNextActivityCoroutine()); 
     }
     
     private IEnumerator GoToNextActivityCoroutine()
@@ -132,6 +123,7 @@ public class MapFlux : MonoFlux
         Service.Fade(true);
         yield return new WaitForSeconds(2);
         Display(false);
+        "Camera.Change".Dispatch(false);
         yield return new WaitForSeconds(2);
         "DayN.Display".Dispatch(true);
         Service.Fade(false);

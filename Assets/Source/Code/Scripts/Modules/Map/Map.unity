@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b9c9ce3292f492c91d0137abb817ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   changePos: 0
   camerar: {fileID: 1317666936}
 --- !u!81 &1317666939
