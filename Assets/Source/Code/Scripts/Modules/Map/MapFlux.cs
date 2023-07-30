@@ -25,20 +25,14 @@ public class MapFlux : MonoFlux
     [Flux("Map.Start")]
     private void StartWrite()
     {
+        Service.PlayMusic(MusicEnum.Report);
         Init();
     }
-
-    private void Awake()
-    {
-        // Display(false);
-    }
-
     private void Init()
     {
         "CurrentNew".GetState(out currentNew);
         _isShowingQuote = true;
         dialogSystem.Init();
-        Service.PlayMusic(MusicEnum.Casa);
         indexText = 0;
         dialogSystem.SetText(currentNew.Text_Quotes[indexText]);
     }
@@ -67,6 +61,7 @@ public class MapFlux : MonoFlux
             {
                 // TErmina proceso de quotes
                 "Camera.Change".Dispatch(true);
+                Service.PlayMusic(MusicEnum.Casa);
                 indexText = 0;
                 WritePeopleText();
                 _isShowingQuote = false;
