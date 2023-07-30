@@ -1,3 +1,5 @@
+using System;
+using Kingdox.UniFlux;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,15 +14,34 @@ public class TextView : MonoBehaviour
     private Vector2 _initialPosition;
     private bool _inSlot;
     [SerializeField] private TextMeshProUGUI title;
+    private NewsScriptableObject _currentNew;
+
+    private void OnMouseEnter()
+    {
+        var soundEnum = GetRandomSoundForMMO();
+
+        Service.PlaySound(soundEnum);
+    }
+
+    private void OnMouseDrag()
+    {
+        var soundEnum = GetRandomSoundForMMO();
+
+        Service.PlaySound(soundEnum);
+    }
+
+    private void OnMouseDown()
+    {
+        var soundEnum = GetRandomSoundForMMO();
+
+        Service.PlaySound(soundEnum);
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.4f;
         _inSlot = false;
-        var soundEnum = GetRandomSoundForMMO();
-
-        Service.PlaySound(soundEnum);
         // Debug.Log("BeginDrag");
     }
 
@@ -29,6 +50,12 @@ public class TextView : MonoBehaviour
         var soundEnum = Get.Range(SoundEnum.GrabPaper_1, SoundEnum.GrabPaper_2, SoundEnum.GrabPaper_3);
 
         return soundEnum;
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButton(0))
+            Debug.Log("Mouse down");
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -83,8 +110,14 @@ public class TextView : MonoBehaviour
         _initialPosition = _rectTransform.anchoredPosition;
     }
 
-    public void SetText(TextScriptableObject variableTextTitle)
+    public void SetNew(NewsScriptableObject variableTextTitle)
     {
-        title.SetText(variableTextTitle.Text);
+        _currentNew = variableTextTitle;
+        title.SetText(variableTextTitle.Text_Title.Text);
+    }
+
+    public NewsScriptableObject GetNew()
+    {
+        return _currentNew;
     }
 }
