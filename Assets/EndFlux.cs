@@ -7,7 +7,6 @@ public class EndFlux : MonoFlux
 {
     [SerializeField] private TextWriter textWriter;
     [SerializeField] private Canvas canvas;
-    [SerializeField] private TextScriptableObject textScriptableObject;
     private ConclusionScriptableObject _conclusion;
     private int _quoteIndex;
     private Coroutine waitcourtine;
@@ -29,7 +28,6 @@ public class EndFlux : MonoFlux
     private void Write()
     {
         _conclusion = NewsAtributteProcessor._.GetConclusion();
-        var originalText = textScriptableObject.Text;
         _quoteIndex = 0;
         textWriter.SetText(_conclusion.quotes[_quoteIndex].Text);
         textWriter.OnTextEnd += DoWaitCoroutine;
