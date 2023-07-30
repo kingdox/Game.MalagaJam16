@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Con una nueva propuesta lanzada hace unas escasas horas,  se han alcanzado
-        cifras economicas record.
+      value: "Con una nueva propuesta lanzada hace unas escasas horas, se han alcanzado
+        cifras econ\xF3micas r\xE9cord."
     - name: '1 : English'
       enumme: 1
       value: 

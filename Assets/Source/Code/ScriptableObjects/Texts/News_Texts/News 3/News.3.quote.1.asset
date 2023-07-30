@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Los mineros se encuentran bien y han sido atendidos por los servicios
-        medicos.
+      value: "Los mineros se encuentran bien y han sido atendidos por los servicios
+        m\xE9dicos."
     - name: '1 : English'
       enumme: 1
       value: 

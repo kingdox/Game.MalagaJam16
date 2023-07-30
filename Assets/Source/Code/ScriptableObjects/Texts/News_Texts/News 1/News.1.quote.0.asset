@@ -18,8 +18,8 @@ MonoBehaviour:
     - name: '0 : Spanish'
       enumme: 0
       value: "El secretario general de la ONU ha comunicado esta misma ma\xF1ana
-        la desintegracion temporal de la organizacion debido a las discrepancias
-        de los paises fundadores."
+        la desintegraci\xF3n de la organizaci\xF3n debido a las discrepancias entre
+        pa\xEDses."
     - name: '1 : English'
       enumme: 1
       value: 
