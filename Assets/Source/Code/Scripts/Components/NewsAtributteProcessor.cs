@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using XavHelpTo;
 using XavHelpTo.Get;
 using XavHelpTo.Know;
 
@@ -11,8 +12,11 @@ public class NewsAtributteProcessor : MonoBehaviour
     private List<AttributeScriptableObject> _attributeScriptableObjects;
     [SerializeField] private List<ConclusionScriptableObject> conclusionScriptableObjects;
 
-    private void Start()
+    
+    private void Awake()
     {
+        this.Singleton(ref _, true);
+        // list_news_left = general.News.ToArray().ToList();
         _attributeScriptableObjects = new List<AttributeScriptableObject>();
     }
 
