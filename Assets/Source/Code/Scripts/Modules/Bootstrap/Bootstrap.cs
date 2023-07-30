@@ -29,9 +29,9 @@ public sealed class Bootstrap : MonoFlux
         yield return Service.AddScene(SceneData.Fader); 
 
         // EXPERIMENTAL
+        yield return Service.AddScene(SceneData.Intro); 
         yield return Service.AddScene(SceneData.Dia_n); 
         yield return Service.AddScene(SceneData.ChooseScene); 
-        yield return Service.AddScene(SceneData.Intro); 
         yield return Service.AddScene(SceneData.Map); 
 
 

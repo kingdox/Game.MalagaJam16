@@ -52,11 +52,7 @@ public class TextView : MonoBehaviour
         return soundEnum;
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
-            Debug.Log("Mouse down");
-    }
+
 
     public void OnEndDrag(PointerEventData eventData)
     {
