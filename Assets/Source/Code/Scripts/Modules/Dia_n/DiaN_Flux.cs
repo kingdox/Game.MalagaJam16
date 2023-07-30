@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
@@ -40,6 +42,11 @@ public sealed class DiaN_Flux : MonoFlux
 
     private async void GoToNextScene()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Empezaos Corrotina DayN")
+        StartCoroutine(GoToNextActivityCoroutine());
+        return;
+#endif
         await Task.Delay(2000);
         Service.Fade(true);
         await Task.Delay(1000);
@@ -51,5 +58,20 @@ public sealed class DiaN_Flux : MonoFlux
         Service.Fade(false);
         "Choice.Start".Dispatch();
 
+    }
+    
+    
+    private IEnumerator GoToNextActivityCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        Service.Fade(true);
+        yield return new WaitForSeconds(1);
+        textWriter.OnTextEnd -= GoToNextScene;        
+        textWriter.ResetText();
+        Display(false);
+        yield return new WaitForSeconds(1);
+        "Choice.Display".Dispatch(true);
+        Service.Fade(false);
+        "Choice.Start".Dispatch();
     }
 }

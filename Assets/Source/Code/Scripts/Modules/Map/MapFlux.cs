@@ -111,11 +111,28 @@ public class MapFlux : MonoFlux
 
     private async void GoToChoiceScene()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Empezaos Corrotina MapFlux")
+        StartCoroutine(GoToNextActivityCoroutine());
+        return;
+#endif
         dialogSystem.ResetTexts();
         Service.Fade(true);
         await Task.Delay(2000);
         Display(false);
         await Task.Delay(2000);
+        "DayN.Display".Dispatch(true);
+        Service.Fade(false);
+        "DayN.Start".Dispatch();
+    }
+    
+    private IEnumerator GoToNextActivityCoroutine()
+    {
+        dialogSystem.ResetTexts();
+        Service.Fade(true);
+        yield return new WaitForSeconds(2);
+        Display(false);
+        yield return new WaitForSeconds(2);
         "DayN.Display".Dispatch(true);
         Service.Fade(false);
         "DayN.Start".Dispatch();

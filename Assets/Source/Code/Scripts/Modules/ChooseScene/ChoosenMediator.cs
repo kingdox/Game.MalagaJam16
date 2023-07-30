@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Kingdox.UniFlux;
@@ -91,6 +92,7 @@ public class ChoosenMediator : MonoFlux
             RemoveSlot(arg1);
             ResetTexts();
         }
+
         var soundEnum = GetRandomSoundForMMO();
 
         Service.PlaySound(soundEnum);
@@ -120,6 +122,11 @@ public class ChoosenMediator : MonoFlux
 
     private async void GoToNextScene()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        Debug.Log("Empezaos Corrotina Choosen")
+        StartCoroutine(GoToNextActivityCoroutine());
+        return;
+#endif
         titleBody.ResetText();
         Service.Fade(true);
         await Task.Delay(2000);
@@ -129,7 +136,19 @@ public class ChoosenMediator : MonoFlux
         Service.Fade(false);
         "Map.Start".Dispatch();
     }
-    
+
+    private IEnumerator GoToNextActivityCoroutine()
+    {
+        titleBody.ResetText();
+        Service.Fade(true);
+        yield return new WaitForSeconds(2);
+        Display(false);
+        yield return new WaitForSeconds(2);
+        "Map.Display".Dispatch(true);
+        Service.Fade(false);
+        "Map.Start".Dispatch();
+    }
+
     private SoundEnum GetRandomSoundForMMO()
     {
         var soundEnum = Get.Range(SoundEnum.GrabPaper_1, SoundEnum.GrabPaper_2, SoundEnum.GrabPaper_3);
