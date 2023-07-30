@@ -6,21 +6,27 @@ using UnityEngine;
 using Kingdox.UniFlux;
 //using Service;
 
-public sealed class MapFlux : MonoFlux
+
+namespace ConflictingClassName
 {
-    public Animator animator_tv;
-
-    [Flux("Map.Begin")] private void Begin() 
+    public sealed class MapFlux : MonoFlux
     {
-        animator_tv.SetTrigger("Play");
-    }
-    private void OnEndIntroSound() 
-    {
-        Service.PlayMusic(MusicEnum.Report);
-        
-    }
+        public Animator animator_tv;
 
+        [Flux("Map.Begin")]
+        private void Begin()
+        {
+            animator_tv.SetTrigger("Play");
+        }
+        private void OnEndIntroSound()
+        {
+            Service.PlayMusic(MusicEnum.Report);
+
+        }
+
+    }
 }
+
 
 /*
 
