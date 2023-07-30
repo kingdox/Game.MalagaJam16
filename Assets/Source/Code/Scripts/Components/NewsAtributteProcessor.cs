@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using XavHelpTo.Get;
@@ -9,6 +10,11 @@ public class NewsAtributteProcessor : MonoBehaviour
     public static NewsAtributteProcessor _;
     private List<AttributeScriptableObject> _attributeScriptableObjects;
     [SerializeField] private List<ConclusionScriptableObject> conclusionScriptableObjects;
+
+    private void Start()
+    {
+        _attributeScriptableObjects = new List<AttributeScriptableObject>();
+    }
 
     public void AddAttributes(AttributeScriptableObject[] currentNewAttributes)
     {
