@@ -41,6 +41,7 @@ public class MapFlux : MonoFlux
         dialogSystem.Init();
         indexText = 0;
         dialogSystem.SetText(currentNew.Text_Quotes[indexText]);
+        NewsAtributteProcessor._.AddAttributes(currentNew.Attributes);
     }
 
     [Flux(Kingdox.UniFlux.Click.Click.Key.OnClickEnterNew)]
@@ -104,13 +105,31 @@ public class MapFlux : MonoFlux
         daysLeft--;
         if (daysLeft == 0)
         {
-            //END
+            GoToEndScene();
             return;
         }
 
         "DayN".DispatchState(daysLeft);
 
         GoToChoiceScene();
+    }
+    
+    private void GoToEndScene()
+    {
+        StartCoroutine(GoToEndSceneCoroutine()); 
+    }
+
+    private IEnumerator GoToEndSceneCoroutine()
+    {
+        dialogSystem.ResetTexts();
+        Service.Fade(true);
+        yield return new WaitForSeconds(2);
+        Display(false);
+        "Camera.Change".Dispatch(false);
+        yield return new WaitForSeconds(2);
+        "End.Display".Dispatch(true);
+        Service.Fade(false);
+        "End.Start".Dispatch();
     }
 
     private void GoToChoiceScene()
