@@ -10,7 +10,7 @@ public class ChoosenMediator : MonoFlux
 {
     [SerializeField] private List<TextSlot> textSlots;
     [SerializeField] private List<TextView> textViews;
-    [SerializeField] private List<NewsScriptableObject> newsScriptableObjects;
+    // [SerializeField] private List<NewsScriptableObject> newsScriptableObjects;
     [SerializeField] private TextWriter titleWriter, titleBody;
     [SerializeField] private Canvas canvas;
     [SerializeField] private TextMeshProUGUI title;
@@ -50,9 +50,11 @@ public class ChoosenMediator : MonoFlux
             textView.Init(canvas);
         }
 
-        for (var index = 0; index < newsScriptableObjects.Count; index++)
+        var randomNews = NewsRandomSelector._.GetTwoRandomNews();
+
+        for (var index = 0; index < randomNews.Count; index++)
         {
-            var newsScriptableObject = newsScriptableObjects[index];
+            var newsScriptableObject = randomNews[index];
             var textView = textViews[index];
             textView.SetNew(newsScriptableObject);
             _dictionaryNewsText.Add(textViews[index], newsScriptableObject);
@@ -94,7 +96,6 @@ public class ChoosenMediator : MonoFlux
         }
 
         var soundEnum = GetRandomSoundForMMO();
-
         Service.PlaySound(soundEnum);
         textView.SetToInitialPosition();
         //Get SO of textView

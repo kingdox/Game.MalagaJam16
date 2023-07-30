@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   News:
   - {fileID: 11400000, guid: 0136a8a7e498943cbafa2b35dae4459f, type: 2}
+  - {fileID: 11400000, guid: bb4d5975c87640f4cb2ef425f63f9834, type: 2}
+  - {fileID: 11400000, guid: 67db3f25f0adac44c92400a3ccf7d908, type: 2}
+  - {fileID: 11400000, guid: 4b5b4d4da2da0d14c8bcf03998b2b307, type: 2}
+  - {fileID: 11400000, guid: 05b82acc4012abb4b8e8b69b976b2b89, type: 2}
+  - {fileID: 11400000, guid: 3e2c17b3cce7f5348a638c391e134d94, type: 2}
   Musics:
     list:
     - name: '0 : Intro'
