@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewsRandomSelector : MonoBehaviour
 {
-    List<News> lst = new List<>();
+    // List<News> lst = new List<>();
 
     public NewsRandomSelector() 
     {
