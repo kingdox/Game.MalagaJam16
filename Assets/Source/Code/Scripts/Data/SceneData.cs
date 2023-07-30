@@ -16,5 +16,5 @@ public static class SceneData
     public const string Map = "Map"; // TODO
     public const string System_Audio = "System_Audio";
     public const string Fader = "Fader";
-    public static string End = "End";
+    public const string End = "End";
 }

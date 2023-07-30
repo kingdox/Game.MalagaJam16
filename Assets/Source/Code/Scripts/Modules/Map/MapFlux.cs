@@ -35,6 +35,7 @@ public class MapFlux : MonoFlux
         dialogSystem.Init();
         indexText = 0;
         dialogSystem.SetText(currentNew.Text_Quotes[indexText]);
+        NewsAtributteProcessor._.AddAttributes(currentNew.Attributes);
     }
 
     [Flux(Kingdox.UniFlux.Click.Click.Key.OnClickEnterNew)]
