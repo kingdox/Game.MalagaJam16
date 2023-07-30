@@ -1,17 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
-//using Service;
-
 public sealed class CameraFlux : MonoFlux
 {
-    // public Camera
-
-    // [Flux(Kingdox.UniFlux.Updates.UpdatesService.Key.OnUpdate)] private void OnUpdate()
-    // {
-
-    // }
+    public const float MIN = 0.36f;
+    public const float MAX = 2f;
+    public float speed = 2f;
+    public bool changePos;
+    public Camera camerar;
+    private void Awake() => camerar.orthographicSize=MIN;
+    [Flux("Camera.Change")]private void Change() => changePos = !changePos;
+    [Flux(Kingdox.UniFlux.Updates.UpdatesService.Key.OnUpdate)] private void OnUpdate() => Move();
+    private void Move() => camerar.orthographicSize = Mathf.MoveTowards(camerar.orthographicSize,changePos?MAX:MIN,speed*Time.deltaTime);
 }
