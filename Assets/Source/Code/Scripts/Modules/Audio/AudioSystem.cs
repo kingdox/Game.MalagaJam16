@@ -41,6 +41,7 @@ public sealed class AudioSystem : MonoFlux
     {
         if (volume_music_A_target>volume_music_B_target)
         {
+            $"B".Print();
             volume_music_A_target=0;
             volume_music_B_target=1;
             src_music_B.clip=clip;
@@ -48,6 +49,7 @@ public sealed class AudioSystem : MonoFlux
         }
         else if(volume_music_B_target>volume_music_A_target)
         {
+            $"A1".Print();
             volume_music_A_target=1;
             volume_music_B_target=0;
             src_music_A.clip=clip;
@@ -55,6 +57,7 @@ public sealed class AudioSystem : MonoFlux
         }
         else
         {
+            $"A2".Print();
             volume_music_A_target=1;
             volume_music_B_target=0;
             src_music_A.clip=clip;
