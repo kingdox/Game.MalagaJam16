@@ -98,13 +98,31 @@ public class MapFlux : MonoFlux
         daysLeft--;
         if (daysLeft == 0)
         {
-            //END
+            GoToEndScene();
             return;
         }
 
         "DayN".DispatchState(daysLeft);
 
         GoToChoiceScene();
+    }
+    
+    private void GoToEndScene()
+    {
+        StartCoroutine(GoToEndSceneCoroutine()); 
+    }
+
+    private IEnumerator GoToEndSceneCoroutine()
+    {
+        dialogSystem.ResetTexts();
+        Service.Fade(true);
+        yield return new WaitForSeconds(2);
+        Display(false);
+        "Camera.Change".Dispatch(false);
+        yield return new WaitForSeconds(2);
+        "End.Display".Dispatch(true);
+        Service.Fade(false);
+        "End.Start".Dispatch();
     }
 
     private void GoToChoiceScene()

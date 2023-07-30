@@ -33,6 +33,7 @@ public sealed class Bootstrap : MonoFlux
         yield return Service.AddScene(SceneData.Dia_n); 
         yield return Service.AddScene(SceneData.ChooseScene); 
         yield return Service.AddScene(SceneData.Map); 
+        yield return Service.AddScene(SceneData.End); 
 
 
         // INIT GAME
