@@ -17,7 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Selecciona la noticia
+      value: Arrastra la noticia
     - name: '1 : English'
       enumme: 1
-      value: Choose the news
+      value: Drag the news
