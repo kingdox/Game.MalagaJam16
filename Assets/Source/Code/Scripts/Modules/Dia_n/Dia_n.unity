@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: _text
       value: Dia N Quedan (3-N) dias
       objectReference: {fileID: 0}
+    - target: {fileID: 8764066887501226106, guid: cd0e7f5ba9edb3f489f759c373cbfb50, type: 3}
+      propertyPath: canPlaySound
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

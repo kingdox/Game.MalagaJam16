@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Kingdox.UniFlux;
 using TMPro;
 using UnityEngine;
+using XavHelpTo.Get;
 
 public class ChoosenMediator : MonoFlux
 {
@@ -90,7 +91,9 @@ public class ChoosenMediator : MonoFlux
             RemoveSlot(arg1);
             ResetTexts();
         }
+        var soundEnum = GetRandomSoundForMMO();
 
+        Service.PlaySound(soundEnum);
         textView.SetToInitialPosition();
         //Get SO of textView
         Debug.Log($"SlotIsFilled 2 {textView.name}");
@@ -125,5 +128,12 @@ public class ChoosenMediator : MonoFlux
         "Map.Display".Dispatch(true);
         Service.Fade(false);
         "Map.Start".Dispatch();
+    }
+    
+    private SoundEnum GetRandomSoundForMMO()
+    {
+        var soundEnum = Get.Range(SoundEnum.GrabPaper_1, SoundEnum.GrabPaper_2, SoundEnum.GrabPaper_3);
+
+        return soundEnum;
     }
 }
