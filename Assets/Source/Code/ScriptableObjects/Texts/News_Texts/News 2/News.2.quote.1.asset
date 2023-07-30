@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: 'Miles de refugiados se agolpan en las zonas mas elevadas de las islas
-        y aquellos con dinero huyen a la peninsula. '
+      value: "Miles de refugiados se agolpan en las zonas m\xE1s elevadas de las
+        islas y aquellos con dinero huyen a la pen\xEDnsula."
     - name: '1 : English'
       enumme: 1
       value: Miles de refugiados se agolpan en las zonas mas elevadas de las islas

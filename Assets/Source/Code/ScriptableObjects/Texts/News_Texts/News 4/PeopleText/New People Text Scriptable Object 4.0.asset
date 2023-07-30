@@ -17,7 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: La primera noticia buena de verdad en meses!
+      value: "\xA1La primera noticia buena de verdad en meses!"
     - name: '1 : English'
       enumme: 1
       value: 

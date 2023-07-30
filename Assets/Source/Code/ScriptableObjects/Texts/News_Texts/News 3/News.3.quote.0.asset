@@ -18,7 +18,7 @@ MonoBehaviour:
     - name: '0 : Spanish'
       enumme: 0
       value: "Un equipo especial de la brigada en conjunto con el ej\xE9rcito ha
-        realizado el rescate esta madrugada. "
+        realizado el rescate esta madrugada."
     - name: '1 : English'
       enumme: 1
       value: 

@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "No podr\xEDais haberos ahorrado esa informaci\xF3n? Las cosas ya est\xE1n
-        \tlo bastante mal para tener que preocuparnos de algo m\xE1s. "
+      value: "\xBFNo podr\xEDais haberos ahorrado esa informaci\xF3n? Las cosas ya
+        est\xE1n \tlo bastante mal para tener que preocuparnos de algo m\xE1s."
     - name: '1 : English'
       enumme: 1
       value: 
