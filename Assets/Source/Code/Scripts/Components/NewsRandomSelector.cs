@@ -26,7 +26,7 @@ public class NewsRandomSelector : MonoBehaviour
         var selected = 0;
         do
         {
-            var soundEnum = Get.Range(_copyListNewsLeft)[0];
+            var soundEnum = Get.Range(_copyListNewsLeft.ToArray());
             _copyListNewsLeft.Remove(soundEnum);
             selectedNews.Add(soundEnum);
             selected++;
