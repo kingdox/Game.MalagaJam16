@@ -35,6 +35,12 @@ public class NewsAtributteProcessor : MonoBehaviour
                 selectedConclusionScriptableObjects.Add(conclusion);
             }
         }
+
+        if (selectedConclusionScriptableObjects.Count == 0)
+        {
+            return conclusionScriptableObjects[0];
+        }
+        
         var conclusionScriptableObject = Get.Range(selectedConclusionScriptableObjects.ToArray());
 
         return conclusionScriptableObject;
