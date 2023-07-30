@@ -28,14 +28,18 @@ public class MapFlux : MonoFlux
         StartCoroutine(ReportMusic());
         Init();
     }
+
     private IEnumerator ReportMusic()
     {
         Service.PlaySound(SoundEnum.ReportIntro);
         yield return new WaitForSeconds(6f);
         Service.PlayMusic(MusicEnum.Report);
     }
+
     private void Init()
     {
+        Debug.Log("Init ENTER");
+
         "CurrentNew".GetState(out currentNew);
         _isShowingQuote = true;
         dialogSystem.Init();
@@ -44,9 +48,9 @@ public class MapFlux : MonoFlux
         NewsAtributteProcessor._.AddAttributes(currentNew.Attributes);
     }
 
-    [Flux(Kingdox.UniFlux.Click.Click.Key.OnClickEnterNew)]
-    private void OnClickEnter()
+    public void Update()
     {
+        if (!Input.GetMouseButtonDown(0)) return;
         if (!_enableEnter) return;
         _enableEnter = false;
         UpdateTextIndex();
@@ -54,6 +58,8 @@ public class MapFlux : MonoFlux
 
     private void UpdateTextIndex()
     {
+        Debug.Log("UpdateTextIndex ENTER");
+
         indexText++;
         if (_isShowingQuote)
         {
@@ -73,7 +79,6 @@ public class MapFlux : MonoFlux
                 WritePeopleText();
                 _isShowingQuote = false;
             }
-
         }
         else
         {
@@ -96,6 +101,7 @@ public class MapFlux : MonoFlux
 
     private void EnableEnter()
     {
+        Debug.Log("ENABLE ENTER");
         _enableEnter = true;
     }
 
@@ -113,14 +119,16 @@ public class MapFlux : MonoFlux
 
         GoToChoiceScene();
     }
-    
+
     private void GoToEndScene()
     {
-        StartCoroutine(GoToEndSceneCoroutine()); 
+        StartCoroutine(GoToEndSceneCoroutine());
     }
 
     private IEnumerator GoToEndSceneCoroutine()
     {
+        Debug.Log("GoToEndSceneCoroutine ENTER");
+
         dialogSystem.ResetTexts();
         Service.Fade(true);
         yield return new WaitForSeconds(2);
@@ -134,9 +142,11 @@ public class MapFlux : MonoFlux
 
     private void GoToChoiceScene()
     {
-        StartCoroutine(GoToNextActivityCoroutine()); 
+        Debug.Log("GoToChoiceScene ENTER");
+
+        StartCoroutine(GoToNextActivityCoroutine());
     }
-    
+
     private IEnumerator GoToNextActivityCoroutine()
     {
         dialogSystem.ResetTexts();

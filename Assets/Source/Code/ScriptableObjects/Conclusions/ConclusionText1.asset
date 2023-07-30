@@ -17,7 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Pepe
+      value: Barbara se ha ido debido a tu deriva en el telediario.
     - name: '1 : English'
       enumme: 1
       value: Pewpa

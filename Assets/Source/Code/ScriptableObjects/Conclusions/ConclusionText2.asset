@@ -17,7 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Pepe
+      value: El fin del mundo ha llegado debido a una guerra nuclear pero Barbara
+        ha estado contigo todo el tiempo hasta el final.
     - name: '1 : English'
       enumme: 1
       value: Pewpa

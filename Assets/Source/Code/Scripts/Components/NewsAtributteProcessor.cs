@@ -9,8 +9,8 @@ using XavHelpTo.Know;
 public class NewsAtributteProcessor : MonoBehaviour
 {
     public static NewsAtributteProcessor _;
-    private List<AttributeScriptableObject> _attributeScriptableObjects;
-    [SerializeField] private List<ConclusionScriptableObject> conclusionScriptableObjects;
+    private List<AttributeScriptableObject> _attributeScriptableObjects = new List<AttributeScriptableObject>();
+    [SerializeField] private List<ConclusionScriptableObject> conclusionScriptableObjects = new List<ConclusionScriptableObject>();
 
     
     private void Awake()
