@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XavHelpTo;
+using XavHelpTo; 
 using XavHelpTo.Get;
 
 public class NewsRandomSelector : MonoBehaviour
@@ -18,7 +18,7 @@ public class NewsRandomSelector : MonoBehaviour
 
 
 
-    // int dia = 1;
+    //esto es de ChatGPT
     public NewsRandomSelector() 
     {
         int randomIndex1 = Random.Range(0, general.list_news_left.Length);
@@ -39,15 +39,15 @@ public class NewsRandomSelector : MonoBehaviour
         Debug.Log(selectedNews1);
         Debug.Log(selectedNews2);
 
-            // Eliminar las noticias seleccionadas del arreglo
-            newsData.newsArray[randomIndex1] = null;
-            newsData.newsArray[randomIndex2] = null;
+        // Eliminar las noticias seleccionadas del arreglo
+        newsData.newsArray[randomIndex1] = null;
+        newsData.newsArray[randomIndex2] = null;
 
-            // Si todas las noticias se han borrado, mostrar mensaje y salir
-            if (AllNewsDeleted())
-            {
-                Debug.Log("Todas las noticias han sido borradas.");
-                return;
-            }
+        // Si todas las noticias se han borrado, mostrar mensaje y salir
+        if (AllNewsDeleted())
+        {
+            Debug.Log("Todas las noticias han sido borradas.");
+            return;
+        }
     }
 }
