@@ -209,8 +209,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9660b11365ecca04d8e408e6ac103987, type: 2}
+  m_sharedMaterial: {fileID: 850240786024302129, guid: 9660b11365ecca04d8e408e6ac103987, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -552,9 +552,6 @@ MonoBehaviour:
   textViews:
   - {fileID: 877005279}
   - {fileID: 2084073260}
-  newsScriptableObjects:
-  - {fileID: 11400000, guid: 0136a8a7e498943cbafa2b35dae4459f, type: 2}
-  - {fileID: 11400000, guid: bb4d5975c87640f4cb2ef425f63f9834, type: 2}
   titleWriter: {fileID: 27491626}
   titleBody: {fileID: 717660145}
   canvas: {fileID: 665904423}
@@ -842,8 +839,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Choose
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9660b11365ecca04d8e408e6ac103987, type: 2}
+  m_sharedMaterial: {fileID: 850240786024302129, guid: 9660b11365ecca04d8e408e6ac103987, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
