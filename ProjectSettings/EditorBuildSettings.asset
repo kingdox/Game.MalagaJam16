@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Source/Code/Scripts/Modules/Intro/Intro.unity
     guid: 8f7a890ea6688c34c93bd4d6bb4ef762
+  - enabled: 1
+    path: Assets/Source/Code/Scripts/Modules/Map/Map 1.unity
+    guid: 2eab0d2466c5dd542a7b04d3b22ed45a
   m_configObjects: {}
