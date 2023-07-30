@@ -25,8 +25,14 @@ public class MapFlux : MonoFlux
     [Flux("Map.Start")]
     private void StartWrite()
     {
-        Service.PlayMusic(MusicEnum.Report);
+        StartCoroutine(ReportMusic());
         Init();
+    }
+    private IEnumerator ReportMusic()
+    {
+        Service.PlaySound(SoundEnum.ReportIntro);
+        yield return new WaitForSeconds(6f);
+        Service.PlayMusic(MusicEnum.Report);
     }
     private void Init()
     {

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Emily
   m_EditorClassIdentifier: 
   _debug_info: La protagonista del juego
+  peopleColor: {r: 0.45, g: 0, b: 1, a: 1}
   Names:
     list:
     - name: '0 : Spanish'

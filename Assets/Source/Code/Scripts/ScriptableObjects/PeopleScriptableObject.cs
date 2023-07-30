@@ -8,6 +8,7 @@ using XavHelpTo;
 public class PeopleScriptableObject : ScriptableObject
 {
     [SerializeField] [TextArea] private string _debug_info;
+    public Color peopleColor;
     public ListEnum<LanguageEnum, string> Names = new ListEnum<LanguageEnum, string>();
     public string Name => Names.Get(Application.systemLanguage.GET_LOCALE());
 
