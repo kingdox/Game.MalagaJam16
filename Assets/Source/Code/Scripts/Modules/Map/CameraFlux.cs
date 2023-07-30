@@ -8,6 +8,10 @@ using Kingdox.UniFlux;
 
 public sealed class CameraFlux : MonoFlux
 {
-    //protected override void OnFlux(bool condition) {}
-    //[Flux()] private void Method() => ;
+    // public Camera
+
+    // [Flux(Kingdox.UniFlux.Updates.UpdatesService.Key.OnUpdate)] private void OnUpdate()
+    // {
+
+    // }
 }
