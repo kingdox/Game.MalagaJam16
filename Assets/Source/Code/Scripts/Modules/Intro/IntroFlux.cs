@@ -1,12 +1,6 @@
-using System;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Kingdox.UniFlux;
-using XavHelpTo;
 
 public sealed class IntroFlux : MonoFlux
 {
@@ -37,42 +31,38 @@ public sealed class IntroFlux : MonoFlux
         textWritter_titleGame.StartWrite();
     }
 
-    private async void OnTextEnd_TitleGame()
+    private void OnTextEnd_TitleGame()
     {
-        await Task.Delay(2000);
+        Debug.Log("Empezaos OnTextEnd_TitleGame");
+
+        StartCoroutine(OnTextEndCoroutine());
+    }
+
+    private IEnumerator OnTextEndCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+
         textWritter_titleGame.ResetText();
-        await Task.Delay(2000);
+        yield return new WaitForSeconds(2);
         textWritter_intro.SetText(text_intro.Text);
         textWritter_intro.StartWrite();
     }
 
-    private async void OnTextEnd_Intro()
+    private void OnTextEnd_Intro()
     {
-        await Task.Delay(2000);
         GoToNextActivity();
     }
 
-    private async void GoToNextActivity()
+    private void GoToNextActivity()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Debug.Log("Empezaos Corrotina intro")
+        Debug.Log("Empezamos Corroutina intro");
 
         StartCoroutine(GoToNextActivityCoroutine());
-        return;
-#endif
-        Service.Fade(true);
-        Service.StopMusic();
-        await Task.Delay(1000);
-        textWritter_intro.ResetText();
-        Display(false);
-        "DayN.Display".Dispatch(true);
-        await Task.Delay(500);
-        Service.Fade(false);
-        "DayN.Start".Dispatch();
     }
 
     private IEnumerator GoToNextActivityCoroutine()
     {
+        yield return new WaitForSeconds(2);
         Service.Fade(true);
         Service.StopMusic();
         yield return new WaitForSeconds(1);

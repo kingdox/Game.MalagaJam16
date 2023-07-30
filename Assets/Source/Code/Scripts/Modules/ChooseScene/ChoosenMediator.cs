@@ -120,21 +120,10 @@ public class ChoosenMediator : MonoFlux
         }
     }
 
-    private async void GoToNextScene()
+    private void GoToNextScene()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Debug.Log("Empezaos Corrotina Choosen")
+        Debug.Log("Empezaos Corrotina Choosen");
         StartCoroutine(GoToNextActivityCoroutine());
-        return;
-#endif
-        titleBody.ResetText();
-        Service.Fade(true);
-        await Task.Delay(2000);
-        Display(false);
-        await Task.Delay(2000);
-        "Map.Display".Dispatch(true);
-        Service.Fade(false);
-        "Map.Start".Dispatch();
     }
 
     private IEnumerator GoToNextActivityCoroutine()

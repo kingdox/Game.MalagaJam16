@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
-using XavHelpTo;
 
 public sealed class DiaN_Flux : MonoFlux
 {
@@ -24,12 +21,7 @@ public sealed class DiaN_Flux : MonoFlux
     {
         Write();
     }
-
-    private void Start()
-    {
-        // Write();
-    }
-
+    
     private void Write()
     {
         "DayN".GetState(out int daysLeft);
@@ -40,24 +32,10 @@ public sealed class DiaN_Flux : MonoFlux
         textWriter.OnTextEnd += GoToNextScene;
     }
 
-    private async void GoToNextScene()
+    private void GoToNextScene()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Debug.Log("Empezaos Corrotina DayN")
+        Debug.Log("Empezaos Corrotina DayN");
         StartCoroutine(GoToNextActivityCoroutine());
-        return;
-#endif
-        await Task.Delay(2000);
-        Service.Fade(true);
-        await Task.Delay(1000);
-        textWriter.OnTextEnd -= GoToNextScene;        
-        textWriter.ResetText();
-        Display(false);
-        await Task.Delay(1000);
-        "Choice.Display".Dispatch(true);
-        Service.Fade(false);
-        "Choice.Start".Dispatch();
-
     }
     
     
