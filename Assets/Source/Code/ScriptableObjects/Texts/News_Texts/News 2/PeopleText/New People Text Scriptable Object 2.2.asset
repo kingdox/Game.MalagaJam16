@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Pero esto ya ha salido varias veces en las noticias, por qu\xE9 lo
-        has vuelto a mostrar?"
+      value: "Pero esto ya ha salido varias veces en las noticias, \xBFpor qu\xE9
+        lo has vuelto a mostrar?"
     - name: '1 : English'
       enumme: 1
       value: 

@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Los investigadores de Malaga capital han conseguido una vacuna para
-        el ebola tras 4 a\xF1os de trabajo."
+      value: "Los investigadores de M\xE1laga capital han conseguido una vacuna para
+        el \xE9bola tras 4 a\xF1os de trabajo."
     - name: '1 : English'
       enumme: 1
       value: 

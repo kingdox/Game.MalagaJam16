@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Los terremotos, que tambien golpearan Espa\xF1a, podrian llegar en
-        cualquier momento. Se recomienda maxima precaucion. "
+      value: "Los terremotos, que tambi\xE9n golpearan Espa\xF1a, podr\xEDan llegar
+        en cualquier momento. Se recomienda precauci\xF3n."
     - name: '1 : English'
       enumme: 1
       value: 

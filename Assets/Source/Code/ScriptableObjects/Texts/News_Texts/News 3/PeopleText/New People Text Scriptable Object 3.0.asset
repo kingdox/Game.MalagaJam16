@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "Qu\xE9 alivio! Llevaba varios d\xEDas pendiente de esto. Me esperaba
-        lo peor."
+      value: "\xA1Qu\xE9 alivio! Llevaba varios d\xEDas pendiente de esto. Me esperaba
+        lo peor"
     - name: '1 : English'
       enumme: 1
       value: 

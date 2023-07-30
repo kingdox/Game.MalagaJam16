@@ -17,7 +17,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Quedan {0} dias
+      value: "Quedan {0} d\xEDas"
     - name: '1 : English'
       enumme: 1
       value: '{0} days remaining'
