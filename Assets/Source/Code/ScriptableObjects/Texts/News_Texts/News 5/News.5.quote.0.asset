@@ -17,8 +17,8 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: Tras el ultimo analisis de mercado la industria andaluza ha conseguido
-        unos ingresos record de 1000 millones de euros.
+      value: Con una nueva propuesta lanzada hace unas escasas horas,  se han alcanzado
+        cifras economicas record.
     - name: '1 : English'
       enumme: 1
       value: 

@@ -1,14 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEngine;
 using Kingdox.UniFlux;
-using Kingdox.UniFlux.Scenes;
 using UnityEngine.SceneManagement;
-using XavHelpTo;
-using XavHelpTo.Get;
-using XavHelpTo.Know;
 
 public sealed class Bootstrap : MonoFlux
 {
@@ -49,11 +42,7 @@ public sealed class Bootstrap : MonoFlux
         Service.PlayMusic(MusicEnum.Intro);
         "Intro.Display".Dispatch(true);
         "Intro.Start".Dispatch();
-
-
-        //.Text
-        String.Format("Hola Mundo {0}", 16);
-
+        
         // END
         yield return Service.RemoveScene(SceneData.Bootstrap); 
     }

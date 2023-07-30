@@ -1,5 +1,7 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using Kingdox.UniFlux;
+using XavHelpTo;
 
 public sealed class DiaN_Flux : MonoFlux
 {
@@ -10,20 +12,44 @@ public sealed class DiaN_Flux : MonoFlux
 
     private void Awake()
     {
-        // canvas.enabled = false;
+        Display(false);
+    }
+
+    [Flux("DayN.Display")]
+    private void Display(bool condition) => canvas.enabled = condition;
+
+    [Flux("DayN.Start")] private void StartWrite()
+    {
+        Write();
     }
 
     private void Start()
     {
-        Method();
+        // Write();
     }
 
-    private void Method()
+    private void Write()
     {
         "DayN".GetState(out int daysLeft);
         var originalText = textScriptableObject.Text;
         var formattedText = string.Format(originalText, daysLeft);
         textWriter.SetText(formattedText);
         textWriter.StartWrite();
+        textWriter.OnTextEnd += GoToNextScene;
+    }
+
+    private async void GoToNextScene()
+    {
+        await Task.Delay(2000);
+        Service.Fade(true);
+        await Task.Delay(1000);
+        textWriter.OnTextEnd -= GoToNextScene;        
+        textWriter.ResetText();
+        Display(false);
+        await Task.Delay(1000);
+        "Choice.Display".Dispatch(true);
+        Service.Fade(false);
+        "Choice.Start".Dispatch();
+
     }
 }

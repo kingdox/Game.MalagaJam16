@@ -8,13 +8,14 @@ using XavHelpTo;
 public class PeopleScriptableObject : ScriptableObject
 {
     [SerializeField] [TextArea] private string _debug_info;
-    public ListEnum<LanguageEnum, string> Name = new ListEnum<LanguageEnum, string>();
-    
+    public ListEnum<LanguageEnum, string> Names = new ListEnum<LanguageEnum, string>();
+    public string Name => Names.Get(Application.systemLanguage.GET_LOCALE());
+
     #if UNITY_EDITOR
     private void OnValidate()
     {
         if (Application.isPlaying) return;
-        Name.ValidateList();
+        Names.ValidateList();
     }
     #endif
 }

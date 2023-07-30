@@ -19,7 +19,7 @@ MonoBehaviour:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: LAS ULTIMAS NOTICIAS
+      value: THE LAST NEWS
     - name: '1 : English'
       enumme: 1
       value: 'THE LAST NEWS '

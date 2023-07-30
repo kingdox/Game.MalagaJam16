@@ -53,6 +53,6 @@ public sealed class IntroFlux : MonoFlux
         "DayN.Display".Dispatch(true);
         await Task.Delay(500);
         Service.Fade(false);
-        "DayN.Start".Dispatch(true);
+        "DayN.Start".Dispatch();
     }
 }

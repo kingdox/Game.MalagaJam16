@@ -1,9 +1,10 @@
-using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Kingdox.UniFlux;
 using TMPro;
 using UnityEngine;
 
-public class ChoosenMediator : MonoBehaviour
+public class ChoosenMediator : MonoFlux
 {
     [SerializeField] private List<TextSlot> textSlots;
     [SerializeField] private List<TextView> textViews;
@@ -17,18 +18,24 @@ public class ChoosenMediator : MonoBehaviour
     private Dictionary<TextView, NewsScriptableObject> _dictionaryNewsText;
     private int _textsInPlace;
 
+    [Flux("Choice.Display")]
+    private void Display(bool condition) => canvas.enabled = condition;
+
+    [Flux("Choice.Start")]
+    private void StartWrite()
+    {
+        Init();
+    }
+
     private void Awake()
     {
-        SetStatus(false);
+        Display(false);
     }
 
-    public void SetStatus(bool status)
+    private void Init()
     {
-        canvas.enabled = status;
-    }
-
-    void Start()
-    {
+        Service.PlayMusic(MusicEnum.Elecciones);
+        ResetTexts();
         _dictionaryTexPosition = new Dictionary<TextSlot, TextView>();
         _dictionaryNewsText = new Dictionary<TextView, NewsScriptableObject>();
         foreach (var textSlot in textSlots)
@@ -45,7 +52,7 @@ public class ChoosenMediator : MonoBehaviour
         {
             var newsScriptableObject = newsScriptableObjects[index];
             var textView = textViews[index];
-            textView.SetText(newsScriptableObject.Text_Title);
+            textView.SetNew(newsScriptableObject);
             _dictionaryNewsText.Add(textViews[index], newsScriptableObject);
         }
 
@@ -65,7 +72,7 @@ public class ChoosenMediator : MonoBehaviour
         // Debug.Log("Reset Texts");
         titleWriter.ResetText();
         titleBody.ResetText();
-        _textsInPlace--;
+        _textsInPlace = 0;
     }
 
     private void RemoveSlot(TextSlot obj)
@@ -94,17 +101,29 @@ public class ChoosenMediator : MonoBehaviour
         titleBody.SetText(texts.Text_Description.Text);
         titleBody.StartWrite();
         _dictionaryTexPosition.Add(arg1, textView);
+        var currentNew = textView.GetNew();
         _textsInPlace++;
+        "CurrentNew".DispatchState(currentNew);
     }
 
-    public async void Continue()
+    public void Continue()
     {
+        Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
         if (_textsInPlace == textSlots.Count)
         {
-            //OK
+            GoToNextScene();
         }
+    }
 
-        // await 
-        Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
+    private async void GoToNextScene()
+    {
+        titleBody.ResetText();
+        Service.Fade(true);
+        await Task.Delay(2000);
+        Display(false);
+        await Task.Delay(2000);
+        "Map.Display".Dispatch(true);
+        Service.Fade(false);
+        "Map.Start".Dispatch();
     }
 }
