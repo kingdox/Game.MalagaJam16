@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e585aa3015a438f99935c6d92b97cb, type: 3}
-  m_Name: Intro.Title
+  m_Name: DayNText 1
   m_EditorClassIdentifier: 
-  _debug_info: Descripcion del juego para poner en contexto al jugador.
+  _debug_info: Days remaining
   Texts:
     list:
     - name: '0 : Spanish'
       enumme: 0
-      value: "El fin del mundo se acerca. Tienes que avisarlos. \xBFMentir\xE1s para
-        evitar el caos o dir\xE1s la verdad?"
+      value: "Quedan {0} d\xEDas"
     - name: '1 : English'
       enumme: 1
-      value: 'The end of the world is comming. You must warn your people even if
-        that means using cuestionable means. '
+      value: '{0} days remaining'
