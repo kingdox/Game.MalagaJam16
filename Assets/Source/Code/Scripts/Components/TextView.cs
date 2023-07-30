@@ -1,9 +1,6 @@
-using System;
-using Kingdox.UniFlux;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using XavHelpTo.Get;
 
 public class TextView : MonoBehaviour
     , IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler, IInitializePotentialDragHandler
@@ -16,26 +13,6 @@ public class TextView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI title;
     private NewsScriptableObject _currentNew;
 
-    private void OnMouseEnter()
-    {
-        var soundEnum = GetRandomSoundForMMO();
-
-        Service.PlaySound(soundEnum);
-    }
-
-    private void OnMouseDrag()
-    {
-        var soundEnum = GetRandomSoundForMMO();
-
-        Service.PlaySound(soundEnum);
-    }
-
-    private void OnMouseDown()
-    {
-        var soundEnum = GetRandomSoundForMMO();
-
-        Service.PlaySound(soundEnum);
-    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -44,15 +21,6 @@ public class TextView : MonoBehaviour
         _inSlot = false;
         // Debug.Log("BeginDrag");
     }
-
-    private SoundEnum GetRandomSoundForMMO()
-    {
-        var soundEnum = Get.Range(SoundEnum.GrabPaper_1, SoundEnum.GrabPaper_2, SoundEnum.GrabPaper_3);
-
-        return soundEnum;
-    }
-
-
 
     public void OnEndDrag(PointerEventData eventData)
     {

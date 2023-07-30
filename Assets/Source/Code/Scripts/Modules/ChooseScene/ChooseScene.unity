@@ -1249,6 +1249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 827523706}
     m_Modifications:
+    - target: {fileID: 525855340647610106, guid: 38b35a23a2a775448b713fa41a65443d, type: 3}
+      propertyPath: canPlaySound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4270623856457997872, guid: 38b35a23a2a775448b713fa41a65443d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
