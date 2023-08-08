@@ -15,10 +15,12 @@ public class ChoosenMediator : MonoFlux
     [SerializeField] private Canvas canvas;
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextScriptableObject titleTextScriptableObject;
+    public TextScriptableObject slotText;
 
     private Dictionary<TextSlot, TextView> _dictionaryTexPosition;
     private Dictionary<TextView, NewsScriptableObject> _dictionaryNewsText;
     private int _textsInPlace;
+    public TextMeshProUGUI desecription;
 
     [Flux("Choice.Display")]
     private void Display(bool condition) => canvas.enabled = condition;
@@ -38,6 +40,8 @@ public class ChoosenMediator : MonoFlux
     {
         Service.PlayMusic(MusicEnum.Elecciones);
         ResetTexts();
+        desecription.SetText(slotText.Text);
+
         _dictionaryTexPosition = new Dictionary<TextSlot, TextView>();
         _dictionaryNewsText = new Dictionary<TextView, NewsScriptableObject>();
         foreach (var textSlot in textSlots)
@@ -87,6 +91,8 @@ public class ChoosenMediator : MonoFlux
 
     private void SlotIsFilled(TextSlot arg1, TextView textView)
     {
+        ResetTexts();
+
         Debug.Log($"SlotIsFilled {arg1} is filled with {textView}");
         if (_dictionaryTexPosition.ContainsKey(arg1))
         {
