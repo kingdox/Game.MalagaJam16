@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Kingdox.UniFlux;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public sealed class Bootstrap : MonoFlux
 {
@@ -45,6 +46,7 @@ public sealed class Bootstrap : MonoFlux
         "Intro.Start".Dispatch();
         
         // END
+        yield return new WaitForSeconds(1);
         yield return Service.RemoveScene(SceneData.Bootstrap); 
     }
 
