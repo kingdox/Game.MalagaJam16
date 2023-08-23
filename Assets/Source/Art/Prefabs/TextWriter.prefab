@@ -148,6 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTextMeshProUGUI: {fileID: 3555538905249539585}
-  letterPause: 0.07
+  letterPause: 0.01
   canPlaySound: 0
   _text: 

@@ -45,9 +45,7 @@ public class TextWriter : MonoBehaviour
 
                 if (canPlaySound)
                 {
-                    SoundEnum s = Get.Range(SoundEnum.Key_1, SoundEnum.Key_2, SoundEnum.Key_3, SoundEnum.Key_4,
-                        SoundEnum.Key_5);
-                    Service.PlaySound(s);
+                    Service.PlaySound(Get.Range(SoundEnum.Key_1, SoundEnum.Key_2, SoundEnum.Key_3, SoundEnum.Key_4,SoundEnum.Key_5));
                 }
 
                 yield return new WaitForSeconds(letterPause);
