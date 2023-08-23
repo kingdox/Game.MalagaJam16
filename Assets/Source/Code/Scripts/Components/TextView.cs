@@ -19,7 +19,6 @@ public class TextView : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.4f;
         _inSlot = false;
-        // Debug.Log("BeginDrag");
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -27,9 +26,7 @@ public class TextView : MonoBehaviour
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1;
 
-        // Debug.Log("OnEndDrag");
         if (_inSlot) return;
-        // Debug.Log($"Was outside");
         SetToInitialPosition();
     }
 
@@ -43,7 +40,6 @@ public class TextView : MonoBehaviour
         var textViewBehind = eventData.pointerDrag.GetComponent<TextView>();
         if (!textViewBehind) return;
         textViewBehind.SetToInitialPosition();
-        // Debug.Log("OnDrop");
     }
 
     public void OnInitializePotentialDrag(PointerEventData eventData)
@@ -53,15 +49,11 @@ public class TextView : MonoBehaviour
 
     public void SetToInitialPosition()
     {
-        // Debug.Log("Set To Initial Position");
-
         _rectTransform.anchoredPosition = _initialPosition;
     }
 
     public void IsInGoodPosition(bool status)
     {
-        // Debug.Log($"IsInGoodPosition {status}");
-
         _inSlot = status;
     }
 

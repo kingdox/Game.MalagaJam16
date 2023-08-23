@@ -29,7 +29,6 @@ public class TextWriter : MonoBehaviour
 
     public void StartWrite()
     {
-        Debug.Log("StartWrite ");
         typecoroutine = StartCoroutine(TypeText());
     }
 

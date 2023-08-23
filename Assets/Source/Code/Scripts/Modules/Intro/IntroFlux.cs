@@ -33,8 +33,6 @@ public sealed class IntroFlux : MonoFlux
 
     private void OnTextEnd_TitleGame()
     {
-        Debug.Log("Empezaos OnTextEnd_TitleGame");
-
         StartCoroutine(OnTextEndCoroutine());
     }
 
@@ -55,7 +53,6 @@ public sealed class IntroFlux : MonoFlux
 
     private void GoToNextActivity()
     {
-        Debug.Log("Empezamos Corroutina intro");
 
         StartCoroutine(GoToNextActivityCoroutine());
     }

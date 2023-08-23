@@ -10,7 +10,6 @@ public class TextSlot : MonoBehaviour, IDropHandler
     {
         var textView = eventData.pointerDrag.GetComponent<TextView>();
         if (!textView) return;
-        // Debug.Log("Slot IN");
         OnSlotIsFilled?.Invoke(this, textView);
     }
 }

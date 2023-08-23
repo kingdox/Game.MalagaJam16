@@ -38,7 +38,6 @@ public class MapFlux : MonoFlux
 
     private void Init()
     {
-        Debug.Log("Init ENTER");
 
         "CurrentNew".GetState(out currentNew);
         _isShowingQuote = true;
@@ -58,7 +57,6 @@ public class MapFlux : MonoFlux
 
     private void UpdateTextIndex()
     {
-        Debug.Log("UpdateTextIndex ENTER");
 
         indexText++;
         if (_isShowingQuote)
@@ -101,7 +99,6 @@ public class MapFlux : MonoFlux
 
     private void EnableEnter()
     {
-        Debug.Log("ENABLE ENTER");
         _enableEnter = true;
     }
 
@@ -127,7 +124,6 @@ public class MapFlux : MonoFlux
 
     private IEnumerator GoToEndSceneCoroutine()
     {
-        Debug.Log("GoToEndSceneCoroutine ENTER");
 
         dialogSystem.ResetTexts();
         Service.Fade(true);
@@ -142,8 +138,6 @@ public class MapFlux : MonoFlux
 
     private void GoToChoiceScene()
     {
-        Debug.Log("GoToChoiceScene ENTER");
-
         StartCoroutine(GoToNextActivityCoroutine());
     }
 

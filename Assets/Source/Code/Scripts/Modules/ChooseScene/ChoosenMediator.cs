@@ -10,7 +10,6 @@ public class ChoosenMediator : MonoFlux
 {
     [SerializeField] private List<TextSlot> textSlots;
     [SerializeField] private List<TextView> textViews;
-    // [SerializeField] private List<NewsScriptableObject> newsScriptableObjects;
     [SerializeField] private TextWriter titleWriter, titleBody;
     [SerializeField] private Canvas canvas;
     [SerializeField] private TextMeshProUGUI title;
@@ -77,7 +76,6 @@ public class ChoosenMediator : MonoFlux
 
     private void ResetTexts()
     {
-        // Debug.Log("Reset Texts");
         titleWriter.ResetText();
         titleBody.ResetText();
         _textsInPlace = 0;
@@ -85,7 +83,6 @@ public class ChoosenMediator : MonoFlux
 
     private void RemoveSlot(TextSlot obj)
     {
-        Debug.Log($"Reset slot {obj}");
         _dictionaryTexPosition.Remove(obj);
     }
 
@@ -93,10 +90,8 @@ public class ChoosenMediator : MonoFlux
     {
         ResetTexts();
 
-        Debug.Log($"SlotIsFilled {arg1} is filled with {textView}");
         if (_dictionaryTexPosition.ContainsKey(arg1))
         {
-            // Debug.Log($"SlotIsFilled 1");
             RemoveSlot(arg1);
             ResetTexts();
         }
@@ -105,7 +100,6 @@ public class ChoosenMediator : MonoFlux
         Service.PlaySound(soundEnum);
         textView.SetToInitialPosition();
         //Get SO of textView
-        Debug.Log($"SlotIsFilled 2 {textView.name}");
         textView.IsInGoodPosition(true);
         var texts = _dictionaryNewsText[textView];
         titleWriter.SetText(texts.Text_Title.Text);
@@ -120,7 +114,6 @@ public class ChoosenMediator : MonoFlux
 
     public void Continue()
     {
-        Debug.Log(_textsInPlace == textSlots.Count ? "OK" : "ERROR");
         if (_textsInPlace == textSlots.Count)
         {
             GoToNextScene();
@@ -129,7 +122,6 @@ public class ChoosenMediator : MonoFlux
 
     private void GoToNextScene()
     {
-        Debug.Log("Empezaos Corrotina Choosen");
         StartCoroutine(GoToNextActivityCoroutine());
     }
 

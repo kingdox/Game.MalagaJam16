@@ -34,7 +34,6 @@ public sealed class DiaN_Flux : MonoFlux
 
     private void GoToNextScene()
     {
-        Debug.Log("Empezaos Corrotina DayN");
         StartCoroutine(GoToNextActivityCoroutine());
     }
     
